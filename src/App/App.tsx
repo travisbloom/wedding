@@ -37,7 +37,7 @@ export class App extends React.Component {
       <TopContentContainer>
         <Media query="(min-width: 599px)">
           {(matches: boolean) => (
-            <TopContentVideo autoPlay={true} muted={true} loop={true} playsinline={true}>
+            <TopContentVideo autoPlay={true} muted={true} loop={true} playsInline={true}>
               <source
                 src={process.env.PUBLIC_URL + `/${matches ? 'proposal' : 'croppedProposal'}.mp4`}
                 type="video/mp4"
