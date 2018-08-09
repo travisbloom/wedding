@@ -25,7 +25,6 @@ const TopContentOverlay = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
@@ -33,17 +32,18 @@ const TopContentOverlay = styled.div`
 
 const H1 = styled.h1`
   font-family: 'Parisienne', cursive;
+  margin-top: 80px;
 `;
 
 export class App extends React.Component {
   public render() {
     return (
       <TopContentContainer>
-        <Media query="(min-width: 599px)">
+        <Media query="(min-width: 768px)">
           {(matches: boolean) => (
-            <TopContentVideo autoPlay={true} muted={true} loop={true} playsInline={true}>
+            <TopContentVideo autoPlay={true} muted={true} playsInline={true}>
               <source
-                src={process.env.PUBLIC_URL + `/${matches ? 'proposal' : 'croppedProposal'}.mp4`}
+                src={process.env.PUBLIC_URL + `/${matches ? 'proposal' : 'proposal-mobile'}.mp4`}
                 type="video/mp4"
               />
               <img src={proposalImg} />
