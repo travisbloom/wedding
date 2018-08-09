@@ -8,7 +8,7 @@
   "trailingComma": "all",
   "overrides": [
     {
-      "files": [".prettierrc", ".babelrc", ".eslintrc"],
+      "files": [".prettierrc"],
       "options": { "parser": "json" }
     }
   ]
