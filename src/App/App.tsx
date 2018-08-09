@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Media from 'react-media';
 import styled from 'styled-components';
+import proposalImg from './proposal.jpg';
 
 const TopContentContainer = styled.div`
   position: relative;
@@ -36,11 +37,12 @@ export class App extends React.Component {
       <TopContentContainer>
         <Media query="(min-width: 599px)">
           {(matches: boolean) => (
-            <TopContentVideo autoPlay={true} muted={true} loop={true}>
+            <TopContentVideo autoPlay={true} muted={true} loop={true} playsinline={true}>
               <source
                 src={process.env.PUBLIC_URL + `/${matches ? 'proposal' : 'croppedProposal'}.mp4`}
                 type="video/mp4"
               />
+              <img src={proposalImg} />
             </TopContentVideo>
           )}
         </Media>

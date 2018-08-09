@@ -12,7 +12,8 @@
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
     "format": "prettier --write \"**/*.{js,ts,tsx,jsx,scss,graphql,json,prettierrc,babelrc}\"",
-    "eject": "react-scripts-ts eject"
+    "eject": "react-scripts-ts eject",
+    "deploy": "npm run build && aws s3 sync build/ s3://travis-wedding"
   },
   "devDependencies": {
     "react-media": "^1.8.0",
