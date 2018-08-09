@@ -12,6 +12,8 @@ const TopContentContainer = styled.div`
 
 const TopContentVideo = styled.video`
   height: 100%;
+  width: 100%;
+  object-fit: cover;
   position: absolute;
   top: 0;
 `;
@@ -29,7 +31,9 @@ const TopContentOverlay = styled.div`
   color: white;
 `;
 
-const H1 = styled.h1``;
+const H1 = styled.h1`
+  font-family: 'Parisienne', cursive;
+`;
 
 export class App extends React.Component {
   public render() {

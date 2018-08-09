@@ -1,11 +1,46 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "#BrideAndBloom",
+  "name": "Travis and Meghan's Wedding",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "/simple-eiffel-tower/icons-16.png",
+      "type": "image/png",
+      "sizes": "16x16"
+    },
+    {
+      "src": "/simple-eiffel-tower/icons-24.png",
+      "type": "image/png",
+      "sizes": "24x24"
+    },
+    {
+      "src": "/simple-eiffel-tower/icons-32.png",
+      "type": "image/png",
+      "sizes": "32x32"
+    },
+    {
+      "src": "/simple-eiffel-tower/icons-48.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "/simple-eiffel-tower/icons-57.png",
+      "type": "image/png",
+      "sizes": "57x57"
+    },
+    {
+      "src": "/simple-eiffel-tower/icons-64.png",
+      "type": "image/png",
+      "sizes": "64x64"
+    },
+    {
+      "src": "/simple-eiffel-tower/icons-120.png",
+      "type": "image/png",
+      "sizes": "120x120"
+    },
+    {
+      "src": "/simple-eiffel-tower/icons-152.png",
+      "type": "image/png",
+      "sizes": "152x152"
     }
   ],
   "start_url": "./index.html",
