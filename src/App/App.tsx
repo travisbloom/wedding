@@ -36,12 +36,20 @@ const H1 = styled.h1`
 `;
 
 export class App extends React.Component {
+  private video = React.createRef<HTMLVideoElement>();
+
+  public onClickOverlay = () => {
+    if (this.video.current) {
+      this.video.current.play();
+    }
+  };
+
   public render() {
     return (
       <TopContentContainer>
         <Media query="(min-width: 768px)">
           {(matches: boolean) => (
-            <TopContentVideo autoPlay={true} muted={true} playsInline={true}>
+            <TopContentVideo innerRef={this.video} autoPlay={true} muted={true} playsInline={true}>
               <source
                 src={process.env.PUBLIC_URL + `/${matches ? 'proposal' : 'proposal-mobile'}.mp4`}
                 type="video/mp4"
@@ -50,7 +58,7 @@ export class App extends React.Component {
             </TopContentVideo>
           )}
         </Media>
-        <TopContentOverlay>
+        <TopContentOverlay onClick={this.onClickOverlay}>
           <H1>#BrideAndBloom</H1>
         </TopContentOverlay>
       </TopContentContainer>
