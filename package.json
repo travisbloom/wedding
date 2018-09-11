@@ -5,24 +5,26 @@
   "dependencies": {
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "react-scripts-ts": "2.17.0",
     "react-media": "^1.8.0",
+    "react-scripts-ts": "2.17.0",
     "styled-components": "^3.4.2"
   },
   "scripts": {
     "start": "react-scripts-ts start",
     "build": "react-scripts-ts build",
+    "postbuild": "react-snap",
     "test": "react-scripts-ts test --env=jsdom",
     "format": "prettier --write \"**/*.{js,ts,tsx,jsx,scss,graphql,json,prettierrc,babelrc}\"",
     "eject": "react-scripts-ts eject",
     "deploy": "npm run build && aws s3 sync build/ s3://travis-wedding"
   },
   "devDependencies": {
-    "prettier": "^1.14.1",
     "@types/jest": "^23.3.1",
     "@types/node": "^10.5.7",
     "@types/react": "^16.4.8",
     "@types/react-dom": "^16.0.7",
+    "prettier": "^1.14.1",
+    "react-snap": "^1.19.0",
     "typescript": "^3.0.1"
   }
 }
