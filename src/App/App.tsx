@@ -38,13 +38,13 @@ const H1 = styled.h1`
 export class App extends React.Component {
   private video = React.createRef<HTMLVideoElement>();
 
-  public onClickOverlay = () => {
+  onClickOverlay = () => {
     if (this.video.current) {
       this.video.current.play();
     }
   };
 
-  public render() {
+  render() {
     return (
       <TopContentContainer>
         <Media query="(min-width: 768px)">
