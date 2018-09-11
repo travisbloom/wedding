@@ -12,7 +12,6 @@
   "scripts": {
     "start": "react-scripts-ts start",
     "build": "react-scripts-ts build",
-    "postbuild": "react-snap",
     "test": "react-scripts-ts test --env=jsdom",
     "format": "prettier --write \"**/*.{js,ts,tsx,jsx,scss,graphql,json,prettierrc,babelrc}\"",
     "eject": "react-scripts-ts eject",
