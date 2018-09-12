@@ -2,7 +2,6 @@ import * as React from 'react';
 import Media from 'react-media';
 import styled from 'styled-components';
 import proposalImg from './proposal.jpg';
-
 const TopContentContainer = styled.div`
   position: relative;
   height: 100vh;
