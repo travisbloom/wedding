@@ -32,6 +32,7 @@ const TopContentOverlay = styled.div`
 const H1 = styled.h1`
   font-family: 'Parisienne', cursive;
   margin-top: 80px;
+  font-size: 32px;
 `;
 
 export class App extends React.Component {

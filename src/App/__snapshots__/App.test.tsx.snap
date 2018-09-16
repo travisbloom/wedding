@@ -39,6 +39,7 @@ exports[`renders without crashing 1`] = `
 .c3 {
   font-family: 'Parisienne',cursive;
   margin-top: 80px;
+  font-size: 32px;
 }
 
 <div
