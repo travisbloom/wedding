@@ -1,10 +1,10 @@
 import * as React from 'react';
 import Media from 'react-media';
-import { Sticky, StickyContainer } from 'react-sticky';
 import styled from 'styled-components';
 import proposalImg from './proposal.jpg';
 const TopContentContainer = styled.div`
   position: relative;
+  z-index: 0;
   height: 100vh;
   width: 100%;
   overflow: hidden;
@@ -25,16 +25,10 @@ const TopContentOverlay = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
   background-color: rgba(0, 0, 0, 0.4);
   color: white;
-`;
-
-const H1Container = styled(StickyContainer)`
-  margin-top: calc(50vh - 32px);
-  height: calc(100vh - 80px);
-  width: 100%;
-  text-align: center;
 `;
 
 const H1 = styled.h1`
@@ -66,9 +60,11 @@ export class HeaderVideo extends React.Component {
           )}
         </Media>
         <TopContentOverlay onClick={this.onClickOverlay}>
-          <H1Container>
-            <Sticky>{({ style }) => <H1 style={style}>#BrideAndBloom</H1>}</Sticky>
-          </H1Container>
+          <div style={{ textAlign: 'center' }}>
+            <H1>#BrideAndBloom</H1>
+            <div style={{ marginBottom: '5px' }}>September 7th, 2019</div>
+            <div>Saint Clements Castle, Portland, CT</div>
+          </div>
         </TopContentOverlay>
       </TopContentContainer>
     );
