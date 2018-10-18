@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Media from 'react-media';
 import styled from 'styled-components';
+import { Box, Heading } from '../../components';
 import proposalImg from './proposal.jpg';
 const TopContentContainer = styled.div`
   position: relative;
@@ -31,13 +32,8 @@ const TopContentOverlay = styled.div`
   color: white;
 `;
 
-const H1 = styled.h1`
-  font-family: 'Parisienne', cursive;
-  font-size: 32px;
-`;
-
 export class Home extends React.Component {
-  private video = React.createRef<HTMLVideoElement>();
+  private video: any = React.createRef<HTMLVideoElement>();
 
   onClickOverlay = () => {
     if (this.video.current) {
@@ -50,7 +46,7 @@ export class Home extends React.Component {
       <TopContentContainer>
         <Media query="(min-width: 768px)">
           {(matches: boolean) => (
-            <TopContentVideo autoPlay={true} muted={true} playsInline={true}>
+            <TopContentVideo ref={this.video} autoPlay={true} muted={true} playsInline={true}>
               <source
                 src={process.env.PUBLIC_URL + `/${matches ? 'proposal' : 'proposal-mobile'}.mp4`}
                 type="video/mp4"
@@ -61,8 +57,10 @@ export class Home extends React.Component {
         </Media>
         <TopContentOverlay onClick={this.onClickOverlay}>
           <div style={{ textAlign: 'center' }}>
-            <H1>#BrideAndBloom</H1>
-            <div style={{ marginBottom: '5px' }}>September 7th, 2019</div>
+            <Heading fontFamily="serif">#BrideAndBloom</Heading>
+            <Box mt={3} mb={1}>
+              September 7th, 2019
+            </Box>
             <div>Saint Clements Castle, Portland, CT</div>
           </div>
         </TopContentOverlay>

@@ -1,13 +1,18 @@
 import * as React from 'react';
-import { FixedHeader } from './components/FixedHeader/FixedHeader';
+import { ThemeProvider } from 'styled-components';
+
+import { FixedHeader } from './components';
 import { Home } from './pages/Home/Home';
+import { theme } from './theme';
 export class App extends React.Component {
   render() {
     return (
-      <div>
-        <FixedHeader index={0} />
-        <Home />
-      </div>
+      <ThemeProvider theme={theme}>
+        <div>
+          <FixedHeader index={0} />
+          <Home />
+        </div>
+      </ThemeProvider>
     );
   }
 }
