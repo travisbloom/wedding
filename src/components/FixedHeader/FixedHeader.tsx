@@ -1,5 +1,8 @@
 import * as React from 'react';
+import { Route } from 'react-router-dom';
 import styled from 'styled-components';
+import { ILinkProps, Link } from '../Link/Link';
+import { Text } from '../Text/Text';
 import { AnimatedLogo } from './AnimatedLogo';
 
 const FixedContainer = styled.div`
@@ -12,20 +15,29 @@ const FixedContainer = styled.div`
   color: white;
 `;
 
-const SectionLink = styled.a`
-  margin-right: 20px;
-  display: block;
-`;
+const SectionLink: React.SFC<ILinkProps> = props => (
+  <Route
+    path={props.to}
+    exact={true}
+    children={({ match }) =>
+      match ? (
+        <Link {...props} color="lightGray">
+          <Text fontWeight="bold">{props.children}</Text>
+        </Link>
+      ) : (
+        <Link {...props} />
+      )
+    }
+  />
+);
 
 export class FixedHeader extends React.Component<{ index: number }> {
   render() {
     return (
       <FixedContainer>
         <AnimatedLogo index={this.props.index} />
-        <SectionLink>Details</SectionLink>
-        <SectionLink>RSVP</SectionLink>
-        <SectionLink>Registry</SectionLink>
-        <SectionLink>Photos</SectionLink>
+        <SectionLink to="/">Home</SectionLink>
+        <SectionLink to="/gallery">Gallery</SectionLink>
       </FixedContainer>
     );
   }
