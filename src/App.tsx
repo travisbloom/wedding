@@ -1,13 +1,12 @@
 import * as React from 'react';
-
 import { FixedHeader } from './components/FixedHeader/FixedHeader';
-import { HeaderVideo } from './components/HeaderVideo/HeaderVideo';
+import { Home } from './pages/Home/Home';
 export class App extends React.Component {
   render() {
     return (
-      <div style={{ height: '2000px' }}>
+      <div>
         <FixedHeader index={0} />
-        <HeaderVideo />
+        <Home />
       </div>
     );
   }

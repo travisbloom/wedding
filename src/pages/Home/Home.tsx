@@ -36,7 +36,7 @@ const H1 = styled.h1`
   font-size: 32px;
 `;
 
-export class HeaderVideo extends React.Component {
+export class Home extends React.Component {
   private video = React.createRef<HTMLVideoElement>();
 
   onClickOverlay = () => {
@@ -50,7 +50,7 @@ export class HeaderVideo extends React.Component {
       <TopContentContainer>
         <Media query="(min-width: 768px)">
           {(matches: boolean) => (
-            <TopContentVideo innerRef={this.video} autoPlay={true} muted={true} playsInline={true}>
+            <TopContentVideo autoPlay={true} muted={true} playsInline={true}>
               <source
                 src={process.env.PUBLIC_URL + `/${matches ? 'proposal' : 'proposal-mobile'}.mp4`}
                 type="video/mp4"
