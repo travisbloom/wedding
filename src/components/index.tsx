@@ -1,3 +1,5 @@
+export { Card, ICardProps } from './Card/Card';
+
 export { FixedHeader } from './FixedHeader/FixedHeader';
 
 export { Heading } from './Heading/Heading';
