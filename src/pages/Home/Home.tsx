@@ -32,6 +32,41 @@ const TopContentOverlay = styled.div`
   color: white;
 `;
 
+class EasterEggHeader extends React.Component<{}, { clickCount: number; easterEggTriggered: boolean }> {
+  clickTimeout?: number;
+  state = {
+    clickCount: 0,
+    easterEggTriggered: false,
+  };
+  handleClick = () => {
+    this.setState(state => ({ clickCount: state.clickCount + 1 }));
+    if (this.clickTimeout) {
+      window.clearTimeout(this.clickTimeout);
+    }
+    this.clickTimeout = window.setTimeout(this.triggerEasterEgg, 800);
+  };
+
+  triggerEasterEgg = () => {
+    const { clickCount, easterEggTriggered } = this.state;
+    if (clickCount === 9 && !easterEggTriggered) {
+      this.setState({ easterEggTriggered: true });
+    } else {
+      this.setState({ easterEggTriggered: false, clickCount: 0 });
+    }
+  };
+
+  render() {
+    if (this.state.easterEggTriggered) {
+      return <Heading onClick={this.handleClick}>LEWIS!</Heading>;
+    }
+    return (
+      <Heading fontFamily="serif" onClick={this.handleClick}>
+        #BrideAndBloom
+      </Heading>
+    );
+  }
+}
+
 export class Home extends React.Component {
   private video: any = React.createRef<HTMLVideoElement>();
 
@@ -57,7 +92,7 @@ export class Home extends React.Component {
         </Media>
         <TopContentOverlay onClick={this.onClickOverlay}>
           <div style={{ textAlign: 'center' }}>
-            <Heading fontFamily="serif">#BrideAndBloom</Heading>
+            <EasterEggHeader />
             <Box mt={3} mb={1}>
               September 7th, 2019
             </Box>

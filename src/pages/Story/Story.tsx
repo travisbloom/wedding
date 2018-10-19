@@ -20,12 +20,6 @@ export class Story extends React.Component {
     return (
       <Parallax ref={ref => (this.parallax = ref)} pages={5}>
         <ParallaxLayer offset={0} factor={3} style={{ backgroundColor: '#A6C3D5' }} />
-        <ParallaxLayer offset={0.2}>
-          <StoryContent css={{ maxWidth: '400px' }} mx={4}>
-            Travis and Meghan moved in together after 5 years of long distances. Nothing helps a couple bond like living
-            in a 450 sq ft Manhattan apartment.
-          </StoryContent>
-        </ParallaxLayer>
         <ParallaxLayer
           offset={CITY_START}
           factor={1}
@@ -79,6 +73,24 @@ export class Story extends React.Component {
           <img src={cloud} style={{ display: 'block', width: '20%', marginLeft: '5%' }} />
           <img src={cloud} style={{ display: 'block', width: '15%', marginLeft: '75%' }} />
         </ParallaxLayer>
+        <ParallaxLayer offset={4.2} speed={-0.5}>
+          <img
+            src={eiffelTower}
+            style={{
+              display: 'block',
+              height: '590px',
+              float: 'right',
+              position: 'relative',
+              right: '-25px',
+            }}
+          />
+        </ParallaxLayer>
+        <ParallaxLayer offset={0.2}>
+          <StoryContent css={{ maxWidth: '400px' }} mx={4}>
+            Travis and Meghan moved in together after 5 years of long distances. Nothing helps a couple bond like living
+            in a 450 sq ft Manhattan apartment.
+          </StoryContent>
+        </ParallaxLayer>
         <ParallaxLayer offset={CLOUDS_START + 0.4}>
           <StoryContent css={{ maxWidth: '400px', float: 'right' }} mx={4}>
             In early July of 2018, Travis flew out to Europe for a vacation. The plan was to spend a week backpacking
@@ -95,18 +107,6 @@ export class Story extends React.Component {
             There were a few...minor issues. The bridge he had planned on using was closed. The photographer he had paid
             to capture the moment was sick
           </StoryContent>
-        </ParallaxLayer>
-        <ParallaxLayer offset={4.2} speed={-0.5}>
-          <img
-            src={eiffelTower}
-            style={{
-              display: 'block',
-              height: '590px',
-              float: 'right',
-              position: 'relative',
-              right: '-25px',
-            }}
-          />
         </ParallaxLayer>
       </Parallax>
     );
