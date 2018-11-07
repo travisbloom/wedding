@@ -16,6 +16,7 @@ const FixedContainer = styled.div<{ hasBackground: boolean }>`
   padding: 5px;
   color: white;
   width: 100%;
+  top: 0;
   transition: background-color 1s;
   background-color: ${props => (props.hasBackground ? 'rgb(0,0,0,.5)' : 'transparent')};
 `;
@@ -47,6 +48,7 @@ class FixedHeaderComponent extends React.Component<RouteComponentProps<any>> {
       <FixedContainer hasBackground={this.props.location.pathname === '/gallery'}>
         <AnimatedLogo {...this.props} />
         <SectionLink to="/">Home</SectionLink>
+        <SectionLink to="/info">Info</SectionLink>
         <SectionLink to="/proposal">The Proposal</SectionLink>
         <SectionLink to="/gallery">Gallery</SectionLink>
       </FixedContainer>

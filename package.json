@@ -3,15 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@types/react-images": "^0.5.0",
+    "@types/react-measure": "^2.0.4",
     "@types/react-router": "^4.0.32",
     "@types/react-sticky": "^6.0.2",
+    "@types/recompose": "^0.27.0",
     "@types/styled-components": "^4.0.1",
     "@types/styled-system": "^3.0.4",
     "flubber": "^0.4.2",
     "mauerwerk": "^2.0.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
+    "react-google-maps": "^9.4.5",
+    "react-images": "^0.5.19",
+    "react-measure": "^2.1.2",
     "react-media": "^1.8.0",
+    "react-photo-gallery": "^6.2.1",
     "react-router": "^4.4.0-beta.1",
     "react-router-dom": "^4.4.0-beta.2",
     "react-scripts-ts": "2.17.0",
@@ -19,12 +26,8 @@
     "react-test-renderer": "^16.4.2",
     "react-waypoint": "^8.0.3",
     "rebass": "^3.0.0-9",
-    "styled-components": "^4.0.2",
-    "react-photo-gallery": "^6.2.1",
-    "react-measure": "^2.1.2",
-    "@types/react-measure": "^2.0.4",
-    "react-images": "^0.5.19",
-    "@types/react-images": "^0.5.0"
+    "recompose": "^0.30.0",
+    "styled-components": "^4.0.2"
   },
   "scripts": {
     "start": "react-scripts-ts start",
@@ -35,7 +38,9 @@
     "deploy": "npm run build && aws s3 sync build/ s3://travis-wedding"
   },
   "devDependencies": {
+    "@types/googlemaps": "^3.30.16",
     "@types/jest": "^23.3.1",
+    "@types/markerclustererplus": "^2.1.33",
     "@types/node": "^10.5.7",
     "@types/react": "^16.4.8",
     "@types/react-dom": "^16.0.7",

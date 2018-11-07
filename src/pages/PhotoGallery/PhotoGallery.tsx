@@ -2,6 +2,7 @@ import * as React from 'react';
 import Lightbox from 'react-images';
 import Measure from 'react-measure';
 import Gallery from 'react-photo-gallery';
+import { Box } from 'src/components';
 
 interface IPhoto {
   src: string;
@@ -54,36 +55,38 @@ export class PhotoGallery extends React.Component<
   render() {
     const width = this.state.width;
     return (
-      <Measure bounds={true} onResize={contentRect => this.setState({ width: contentRect!.bounds!.width })}>
-        {({ measureRef }) => {
-          if (width < 1) {
-            return <div ref={measureRef} />;
-          }
-          let columns = 1;
-          if (width >= 480) {
-            columns = 2;
-          }
-          if (width >= 1024) {
-            columns = 3;
-          }
-          if (width >= 1824) {
-            columns = 4;
-          }
-          return (
-            <div ref={measureRef}>
-              <Gallery photos={photos} onClick={this.openLightbox} columns={columns} />
-              <Lightbox
-                images={photos}
-                onClose={this.closeLightbox}
-                onClickPrev={this.gotoPrevious}
-                onClickNext={this.gotoNext}
-                currentImage={this.state.currentImage}
-                isOpen={this.state.lightboxIsOpen}
-              />
-            </div>
-          );
-        }}
-      </Measure>
+      <Box bg="rgba(29, 50, 62, 0.4)">
+        <Measure bounds={true} onResize={contentRect => this.setState({ width: contentRect!.bounds!.width })}>
+          {({ measureRef }) => {
+            if (width < 1) {
+              return <div ref={measureRef} />;
+            }
+            let columns = 1;
+            if (width >= 480) {
+              columns = 2;
+            }
+            if (width >= 1024) {
+              columns = 3;
+            }
+            if (width >= 1824) {
+              columns = 4;
+            }
+            return (
+              <div ref={measureRef}>
+                <Gallery photos={photos} onClick={this.openLightbox} columns={columns} />
+                <Lightbox
+                  images={photos}
+                  onClose={this.closeLightbox}
+                  onClickPrev={this.gotoPrevious}
+                  onClickNext={this.gotoNext}
+                  currentImage={this.state.currentImage}
+                  isOpen={this.state.lightboxIsOpen}
+                />
+              </div>
+            );
+          }}
+        </Measure>
+      </Box>
     );
   }
 }
