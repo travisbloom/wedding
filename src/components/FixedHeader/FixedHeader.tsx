@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { RouteComponentProps, withRouter } from 'react-router';
 import { Route } from 'react-router-dom';
 import { theme } from 'src/theme';
 import styled from 'styled-components';
@@ -6,7 +7,7 @@ import { Box } from '../Box/Box';
 import { ILinkProps, Link } from '../Link/Link';
 import { AnimatedLogo } from './AnimatedLogo';
 
-const FixedContainer = styled.div`
+const FixedContainer = styled.div<{ hasBackground: boolean }>`
   display: flex;
   position: fixed;
   z-index: 1;
@@ -14,6 +15,9 @@ const FixedContainer = styled.div`
   align-items: center;
   padding: 5px;
   color: white;
+  width: 100%;
+  transition: background-color 1s;
+  background-color: ${props => (props.hasBackground ? 'rgb(0,0,0,.5)' : 'transparent')};
 `;
 
 const SectionLink: React.SFC<ILinkProps> = props => (
@@ -37,15 +41,17 @@ const SectionLink: React.SFC<ILinkProps> = props => (
   />
 );
 
-export class FixedHeader extends React.Component<{}> {
+class FixedHeaderComponent extends React.Component<RouteComponentProps<any>> {
   render() {
     return (
-      <FixedContainer>
-        <AnimatedLogo />
+      <FixedContainer hasBackground={this.props.location.pathname === '/gallery'}>
+        <AnimatedLogo {...this.props} />
         <SectionLink to="/">Home</SectionLink>
-        <SectionLink to="/gallery">Gallery</SectionLink>
         <SectionLink to="/proposal">The Proposal</SectionLink>
+        <SectionLink to="/gallery">Gallery</SectionLink>
       </FixedContainer>
     );
   }
 }
+
+export const FixedHeader = withRouter(FixedHeaderComponent);

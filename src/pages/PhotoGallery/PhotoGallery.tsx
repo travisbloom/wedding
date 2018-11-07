@@ -1,50 +1,89 @@
-import { Grid } from 'mauerwerk';
 import * as React from 'react';
-import proposal1Image from './photos/proposal1.jpg';
-import proposal2Image from './photos/proposal2.jpg';
-import proposal3Image from './photos/proposal3.jpg';
-import proposal4Image from './photos/proposal4.jpg';
-import proposal5Image from './photos/proposal5.jpg';
-import proposal6Image from './photos/proposal6.jpg';
+import Lightbox from 'react-images';
+import Measure from 'react-measure';
+import Gallery from 'react-photo-gallery';
 
-const gallery = [
-  { src: proposal6Image },
-  { src: proposal5Image },
-  { src: proposal4Image },
-  { src: proposal3Image },
-  { src: proposal2Image },
-  { src: proposal1Image },
+interface IPhoto {
+  src: string;
+  width: number;
+  height: number;
+}
+const photos: IPhoto[] = [
+  { src: require('./photos/megsurprised.jpg'), width: 1.5, height: 1 },
+  { src: require('./photos/kisseiffeltower.jpg'), width: 1, height: 1.5 },
+  { src: require('./photos/megtraveiffeltower.jpg'), width: 1, height: 1.5 },
+  { src: require('./photos/preengagement.jpg'), width: 1, height: 1.333 },
+  { src: require('./photos/baquetteproposal.jpg'), width: 1, height: 1.5 },
+  { src: require('./photos/engagementpartykiss.jpg'), width: 1.5, height: 1 },
+  { src: require('./photos/ginnygirl.jpg'), width: 1, height: 1.333 },
+  { src: require('./photos/proposal.jpg'), width: 1, height: 1.5 },
+  { src: require('./photos/ring.jpg'), width: 1, height: 1.5 },
+  { src: require('./photos/zion.jpg'), width: 1.333, height: 1 },
 ];
-export class PhotoGalary extends React.Component {
+
+export class PhotoGallery extends React.Component<
+  {},
+  { width: number; currentImage: number; lightboxIsOpen: boolean }
+> {
+  constructor(props) {
+    super(props);
+    this.state = { width: -1, currentImage: 0, lightboxIsOpen: false };
+  }
+  openLightbox = (event, obj) => {
+    this.setState({
+      currentImage: obj.index,
+      lightboxIsOpen: true,
+    });
+  };
+  closeLightbox = () => {
+    this.setState({
+      currentImage: 0,
+      lightboxIsOpen: false,
+    });
+  };
+  gotoPrevious = () => {
+    this.setState({
+      currentImage: this.state.currentImage - 1,
+    });
+  };
+  gotoNext = () => {
+    this.setState({
+      currentImage: this.state.currentImage + 1,
+    });
+  };
   render() {
+    const width = this.state.width;
     return (
-      <div>
-        <Grid
-          // Arbitrary data, should contain keys, possibly heights, etc.
-          data={gallery}
-          // Key accessor, instructs grid on how to fetch individual keys from the data set
-          keys={d => d.src}
-          // Can be a fixed value or an individual data accessor (for variable heights)
-          // If you leave it undefined it will assume 100% container height
-          heights={d => 200}
-          // Optional: number of columns (make it responsive yourself using react-measure/react-media)
-          columns={3}
-          // Optional: space between elements
-          margin={20}
-          // Optional: removes the possibility to scroll away from a maximized element
-          lockScroll={false}
-          // Optional: delay before minimizing an opened element
-          closeDelay={500}
-          // Optional: animates the grid in if true (default)
-          transitionMount={true}
-        >
-          {(data, open, toggle) => (
-            <div onClick={toggle}>
-              <img src={data.src} style={{ width: '100%' }} />
+      <Measure bounds={true} onResize={contentRect => this.setState({ width: contentRect!.bounds!.width })}>
+        {({ measureRef }) => {
+          if (width < 1) {
+            return <div ref={measureRef} />;
+          }
+          let columns = 1;
+          if (width >= 480) {
+            columns = 2;
+          }
+          if (width >= 1024) {
+            columns = 3;
+          }
+          if (width >= 1824) {
+            columns = 4;
+          }
+          return (
+            <div ref={measureRef}>
+              <Gallery photos={photos} onClick={this.openLightbox} columns={columns} />
+              <Lightbox
+                images={photos}
+                onClose={this.closeLightbox}
+                onClickPrev={this.gotoPrevious}
+                onClickNext={this.gotoNext}
+                currentImage={this.state.currentImage}
+                isOpen={this.state.lightboxIsOpen}
+              />
             </div>
-          )}
-        </Grid>
-      </div>
+          );
+        }}
+      </Measure>
     );
   }
 }

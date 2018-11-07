@@ -3,6 +3,7 @@ export const theme = {
     white: '#fff',
     lightGray: 'lightgrey',
     gray: '#b2bcc1',
+    offblue: '#A6C3D5',
   },
   radii: [2, 4, 8],
   fontWeights: [300, 600],

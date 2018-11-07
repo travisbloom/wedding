@@ -16,11 +16,21 @@ const CITY_START = 0.3;
 
 const stories = [
   {
-    date: 'Oct 31, 2017',
+    date: 'December, 2012',
     content: (
       <span>
-        Halloween, or as some may know, the day Meghan and Travis decided long distance was overrated. Meghan made the
-        move to Manhattan, and joined Travis in their soon to be cat castle.
+        Once upon a time, there was a school called UConn, a bar named Huskies, and a clever friend Erin, who introduced
+        Meghan and Travis.
+      </span>
+    ),
+  },
+  {
+    date: 'Oct 31st, 2017',
+    image: require('./storyImages/themanor.jpg'),
+    content: (
+      <span>
+        Fast forward 5 years, Meghan and Travis decided long distance was overrated. Meghan made the move to Manhattan,
+        and joined Travis in their soon to be cat castle.
       </span>
     ),
   },
@@ -35,7 +45,7 @@ const stories = [
     ),
   },
   {
-    date: 'May, 1 2018',
+    date: 'May, 1st 2018',
     content: (
       <span>
         Travis’s grand plan to convince Meghan that she is definitely not being proposed to in Paris begins. In steps
@@ -44,7 +54,7 @@ const stories = [
     ),
   },
   {
-    date: 'May 26, 2018',
+    date: 'May 26th, 2018',
     content: (
       <span>
         Holly and Meghan go ring shopping, under the guise of creating a ring for Holly for her upcoming birthday. A
@@ -64,6 +74,7 @@ const stories = [
     ),
   },
   {
+    date: 'May 11th, 2018',
     content: (
       <span>
         Travis is a busy guy, traveling to Bethel unbeknownst to Meghan, to ask her parents permission to propose, and
@@ -73,7 +84,7 @@ const stories = [
     ),
   },
   {
-    date: 'July 14, 2018',
+    date: 'July 14th, 2018',
     content: (
       <span>
         Meghan and Travis meet in Paris, but as the perfect plan is not without issues, the photographer cancels the
@@ -119,7 +130,7 @@ export class Story extends React.Component {
   render() {
     return (
       <Parallax ref={ref => (this.parallax = ref)} pages={5}>
-        <ParallaxLayer offset={0} factor={3} style={{ backgroundColor: '#A6C3D5' }} />
+        <ParallaxLayer offset={0} factor={3} style={{ backgroundColor: theme.colors.offblue }} />
         <ParallaxLayer
           offset={CITY_START}
           factor={1}
@@ -186,40 +197,52 @@ export class Story extends React.Component {
           />
         </ParallaxLayer>
 
-        {stories.map(({ content, additionalOffset, image, date }, index) => (
-          <React.Fragment key={index}>
-            <ParallaxLayer offset={(4.7 / stories.length) * index + 0.2 + (additionalOffset || 0)}>
-              <Heading
-                css={{ textShadow: theme.textShadow }}
-                textAlign="center"
-                color="white"
-                mb={3}
-                fontFamily="serif"
+        {stories.map(({ content, additionalOffset, image, date }, index) => {
+          return (
+            <React.Fragment key={index}>
+              <ParallaxLayer
+                offset={(4.7 / stories.length) * index + 0.2 + (additionalOffset || 0) + (date ? 0.05 : 0)}
               >
-                {date}
-              </Heading>
-              <Flex
-                css={index % 2 !== 0 ? {} : { float: 'right' }}
-                flexDirection={index % 2 !== 0 ? 'row' : 'row-reverse'}
-                alignItems="flex-start"
-              >
-                <Card mx={4} css={{ maxWidth: '400px' }}>
-                  {content}
-                </Card>
-                {image && (
-                  <Card
-                    borderRadius={999}
-                    css={{ width: '200px', maxWidth: '50%', position: 'relative', top: '-20px' }}
-                    mx={4}
-                    p={2}
-                  >
-                    <Image borderRadius={999} src={image} />
+                <Heading
+                  css={{ textShadow: theme.textShadow }}
+                  textAlign="center"
+                  color="white"
+                  mb={5}
+                  fontFamily="serif"
+                >
+                  {date}
+                </Heading>
+                <Flex
+                  css={index % 2 === 0 ? {} : { float: 'right' }}
+                  flexDirection={index % 2 === 0 ? 'row' : 'row-reverse'}
+                  alignItems="flex-start"
+                >
+                  <Card mx={4} css={{ maxWidth: '400px' }}>
+                    {content}
                   </Card>
-                )}
-              </Flex>
-            </ParallaxLayer>
-          </React.Fragment>
-        ))}
+                  {image && (
+                    <Card
+                      borderRadius={9999}
+                      css={{ width: '200px', height: '200px', position: 'relative', top: '-20px' }}
+                      mx={4}
+                      p={2}
+                    >
+                      <div
+                        style={{
+                          backgroundImage: `url(${image})`,
+                          borderRadius: '999px',
+                          height: '100%',
+                          width: '100%',
+                          backgroundSize: 'cover',
+                        }}
+                      />
+                    </Card>
+                  )}
+                </Flex>
+              </ParallaxLayer>
+            </React.Fragment>
+          );
+        })}
       </Parallax>
     );
   }

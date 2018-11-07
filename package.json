@@ -19,7 +19,12 @@
     "react-test-renderer": "^16.4.2",
     "react-waypoint": "^8.0.3",
     "rebass": "^3.0.0-9",
-    "styled-components": "^4.0.2"
+    "styled-components": "^4.0.2",
+    "react-photo-gallery": "^6.2.1",
+    "react-measure": "^2.1.2",
+    "@types/react-measure": "^2.0.4",
+    "react-images": "^0.5.19",
+    "@types/react-images": "^0.5.0"
   },
   "scripts": {
     "start": "react-scripts-ts start",

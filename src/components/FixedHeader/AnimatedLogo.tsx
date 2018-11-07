@@ -16,7 +16,7 @@ const paths = {
 
 const getPathName = (path: string) => path.split('/')[1] || 'home';
 
-class AnimatedLogoComponent extends React.Component<RouteComponentProps<any>, { prevPath: string | null }> {
+export class AnimatedLogo extends React.Component<RouteComponentProps<any>, { prevPath: string | null }> {
   state = {
     prevPath: '',
   };
@@ -49,5 +49,3 @@ class AnimatedLogoComponent extends React.Component<RouteComponentProps<any>, { 
     );
   }
 }
-
-export const AnimatedLogo = withRouter(AnimatedLogoComponent);
