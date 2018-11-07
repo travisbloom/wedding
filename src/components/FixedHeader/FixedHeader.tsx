@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { Route } from 'react-router-dom';
+import { theme } from 'src/theme';
 import styled from 'styled-components';
 import { Box } from '../Box/Box';
 import { ILinkProps, Link } from '../Link/Link';
-import { Text } from '../Text/Text';
 import { AnimatedLogo } from './AnimatedLogo';
 
 const FixedContainer = styled.div`
@@ -22,23 +22,26 @@ const SectionLink: React.SFC<ILinkProps> = props => (
     exact={true}
     children={({ match }) => (
       <Box mr={3}>
-        {match ? (
-          <Link {...props} color="lightGray">
-            <Text fontWeight="bold">{props.children}</Text>
-          </Link>
-        ) : (
-          <Link {...props} color="white" />
-        )}
+        <Link
+          {...props}
+          css={{
+            textShadow: theme.textShadow,
+            textDecoration: 'none',
+            opacity: match ? 1 : 0.7,
+            fontWeight: match ? 'bold' : 'inherit',
+          }}
+          color="white"
+        />
       </Box>
     )}
   />
 );
 
-export class FixedHeader extends React.Component<{ index: number }> {
+export class FixedHeader extends React.Component<{}> {
   render() {
     return (
       <FixedContainer>
-        <AnimatedLogo index={this.props.index} />
+        <AnimatedLogo />
         <SectionLink to="/">Home</SectionLink>
         <SectionLink to="/gallery">Gallery</SectionLink>
         <SectionLink to="/proposal">The Proposal</SectionLink>

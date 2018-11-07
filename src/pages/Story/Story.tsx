@@ -5,14 +5,114 @@ import city3 from './city3.png';
 import city4 from './city4.png';
 import cloud from './cloud.svg';
 import eiffelTower from './eiffeltower.png';
+import proposal from './storyImages/proposal.jpg';
 
 import { Parallax, ParallaxLayer } from 'react-spring';
-import { Card, ICardProps } from '../../components';
-
-const StoryContent: React.SFC<ICardProps> = props => <Card {...props} />;
+import { theme } from 'src/theme';
+import { Box, Card, Flex, Heading, Image } from '../../components';
 
 const CLOUDS_START = 1.5;
 const CITY_START = 0.3;
+
+const stories = [
+  {
+    date: 'Oct 31, 2017',
+    content: (
+      <span>
+        Halloween, or as some may know, the day Meghan and Travis decided long distance was overrated. Meghan made the
+        move to Manhattan, and joined Travis in their soon to be cat castle.
+      </span>
+    ),
+  },
+  {
+    additionalOffset: 0.1,
+    content: (
+      <span>
+        Now this may be a shock to some…but Meghan LOVES Paris. Unapologetically loves the city of lights, and was not
+        shy in her completely unrealistic wish to be proposed to under the Eiffel Tower. Meanwhile, Travis and Meghan
+        begin their plan to go visit friends in Europe, conveniently enough, some of who live in Paris.
+      </span>
+    ),
+  },
+  {
+    date: 'May, 1 2018',
+    content: (
+      <span>
+        Travis’s grand plan to convince Meghan that she is definitely not being proposed to in Paris begins. In steps
+        Holly, who has a diverse skill set, including master of deception and international ring mule.
+      </span>
+    ),
+  },
+  {
+    date: 'May 26, 2018',
+    content: (
+      <span>
+        Holly and Meghan go ring shopping, under the guise of creating a ring for Holly for her upcoming birthday. A
+        completely plausible story, as Holly’s parents are gemologists… that or Meghan really is the most gullible human
+        on the planet.
+      </span>
+    ),
+  },
+  {
+    content: (
+      <span>
+        Meanwhile, Travis plans a weeklong trip to Rome, Dubrovnik and Athens to travel with his BFF, Dylan. Meghan and
+        Travis make plans to meet in Paris on Bastille Day before continuing on their own trip to Berlin and then
+        Copenhagen. During planning preparations, Travis becomes so upset with Meghan for bringing up the topic of a
+        proposal that she is completely thrown off (and tells all of her friends that it really is not happening).
+      </span>
+    ),
+  },
+  {
+    content: (
+      <span>
+        Travis is a busy guy, traveling to Bethel unbeknownst to Meghan, to ask her parents permission to propose, and
+        organizing the most epic of timelines. Travis arranges for Meghan’s four friends, who she studied abroad with,
+        to be present in Paris when he proposes.
+      </span>
+    ),
+  },
+  {
+    date: 'July 14, 2018',
+    content: (
+      <span>
+        Meghan and Travis meet in Paris, but as the perfect plan is not without issues, the photographer cancels the
+        morning of the proposal. And come to find out later, the pedestrian bridge (original proposal site) is closed
+        for Bastille Day.
+      </span>
+    ),
+  },
+  {
+    content: (
+      <span>
+        Meghan, Travis, Cara, Amanda and Holly set out for “dinner” before their plan to see the fireworks for Bastille
+        Day. In reality, they set out to meet Cara and Amanda’s boyfriends, and one of many surprises (Marissa and
+        Gabe). One closed pedestrian bridge, multiple street closures, multiple tourist groups, and a multi-lane bridge
+        later…
+      </span>
+    ),
+  },
+  {
+    content: (
+      <span>
+        Surprise number one: Marissa calls Meghan’s name on the bridge. Cue screaming, happy tears and a neck wringing
+        hug. Surprise number two: Marissa turns Meghan around to see the Eiffel Tower (read: Travis down on one knee in
+        front of the Eiffel Tower). Cue more screaming, more happy tears and even a little hand flapping.
+      </span>
+    ),
+    image: proposal,
+  },
+  {
+    additionalOffset: 0.1,
+    content: (
+      <span>
+        Not actually a surprise: Meghan says YES, and continues to cry all of the happiest tears, especially when she
+        learns Travis planned for a post-proposal picnic to enjoy her favorite view (La Tour Eiffel). Champagne is
+        popped, cheese is inhaled, bueno bars are adored, and fireworks are watched.
+      </span>
+    ),
+  },
+];
 
 export class Story extends React.Component {
   parallax: any;
@@ -73,7 +173,7 @@ export class Story extends React.Component {
           <img src={cloud} style={{ display: 'block', width: '20%', marginLeft: '5%' }} />
           <img src={cloud} style={{ display: 'block', width: '15%', marginLeft: '75%' }} />
         </ParallaxLayer>
-        <ParallaxLayer offset={4.2} speed={-0.5}>
+        <ParallaxLayer offset={4.3} speed={-0.5}>
           <img
             src={eiffelTower}
             style={{
@@ -85,29 +185,41 @@ export class Story extends React.Component {
             }}
           />
         </ParallaxLayer>
-        <ParallaxLayer offset={0.2}>
-          <StoryContent css={{ maxWidth: '400px' }} mx={4}>
-            Travis and Meghan moved in together after 5 years of long distances. Nothing helps a couple bond like living
-            in a 450 sq ft Manhattan apartment.
-          </StoryContent>
-        </ParallaxLayer>
-        <ParallaxLayer offset={CLOUDS_START + 0.4}>
-          <StoryContent css={{ maxWidth: '400px', float: 'right' }} mx={4}>
-            In early July of 2018, Travis flew out to Europe for a vacation. The plan was to spend a week backpacking
-            then meet up with Meghan
-          </StoryContent>
-        </ParallaxLayer>
-        <ParallaxLayer offset={CLOUDS_START + 1}>
-          <StoryContent css={{ maxWidth: '400px' }} mx={4}>
-            On July 14th they both arrived in Paris and then headed off to meet Meghan's friends in the city
-          </StoryContent>
-        </ParallaxLayer>
-        <ParallaxLayer offset={CLOUDS_START + 1.7}>
-          <StoryContent css={{ maxWidth: '400px', float: 'right' }} mx={4}>
-            There were a few...minor issues. The bridge he had planned on using was closed. The photographer he had paid
-            to capture the moment was sick
-          </StoryContent>
-        </ParallaxLayer>
+
+        {stories.map(({ content, additionalOffset, image, date }, index) => (
+          <React.Fragment key={index}>
+            <ParallaxLayer offset={(4.7 / stories.length) * index + 0.2 + (additionalOffset || 0)}>
+              <Heading
+                css={{ textShadow: theme.textShadow }}
+                textAlign="center"
+                color="white"
+                mb={3}
+                fontFamily="serif"
+              >
+                {date}
+              </Heading>
+              <Flex
+                css={index % 2 !== 0 ? {} : { float: 'right' }}
+                flexDirection={index % 2 !== 0 ? 'row' : 'row-reverse'}
+                alignItems="flex-start"
+              >
+                <Card mx={4} css={{ maxWidth: '400px' }}>
+                  {content}
+                </Card>
+                {image && (
+                  <Card
+                    borderRadius={999}
+                    css={{ width: '200px', maxWidth: '50%', position: 'relative', top: '-20px' }}
+                    mx={4}
+                    p={2}
+                  >
+                    <Image borderRadius={999} src={image} />
+                  </Card>
+                )}
+              </Flex>
+            </ParallaxLayer>
+          </React.Fragment>
+        ))}
       </Parallax>
     );
   }

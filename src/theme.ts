@@ -11,4 +11,5 @@ export const theme = {
     sansSerif: 'Raleway',
     serif: "'Parisienne', cursive",
   },
+  textShadow: '1px 1px rgb(0, 0, 0, .3)',
 };

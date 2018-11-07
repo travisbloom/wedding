@@ -19,7 +19,7 @@ export class App extends React.Component {
       <ThemeProvider theme={theme}>
         <BrowserRouter>
           <>
-            <FixedHeader index={0} />
+            <FixedHeader />
             <Switch>
               <Route path="/gallery" component={Photos} />
               <Route path="/proposal" component={Story} />
