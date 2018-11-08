@@ -184,12 +184,12 @@ export class Story extends React.Component {
           <img src={cloud} style={{ display: 'block', width: '20%', marginLeft: '5%' }} />
           <img src={cloud} style={{ display: 'block', width: '15%', marginLeft: '75%' }} />
         </ParallaxLayer>
-        <ParallaxLayer offset={4.3} speed={-0.5}>
+        <ParallaxLayer offset={4.4} speed={-0.5}>
           <img
             src={eiffelTower}
             style={{
               display: 'block',
-              height: '590px',
+              height: '490px',
               float: 'right',
               position: 'relative',
               right: '-25px',

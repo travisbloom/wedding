@@ -55,7 +55,7 @@ export class PhotoGallery extends React.Component<
   render() {
     const width = this.state.width;
     return (
-      <Box bg="rgba(29, 50, 62, 0.4)">
+      <Box bg="offblue">
         <Measure bounds={true} onResize={contentRect => this.setState({ width: contentRect!.bounds!.width })}>
           {({ measureRef }) => {
             if (width < 1) {

@@ -21,23 +21,25 @@ const FixedContainer = styled.div<{ hasBackground: boolean }>`
   background-color: ${props => (props.hasBackground ? 'rgb(0,0,0,.5)' : 'transparent')};
 `;
 
-const SectionLink: React.SFC<ILinkProps> = props => (
+const SectionLink: React.SFC<ILinkProps> = ({ children, ...props }) => (
   <Route
     path={props.to}
     exact={true}
     children={({ match }) => (
-      <Box mr={3}>
-        <Link
-          {...props}
-          css={{
-            textShadow: theme.textShadow,
-            textDecoration: 'none',
-            opacity: match ? 1 : 0.7,
-            fontWeight: match ? 'bold' : 'inherit',
-          }}
-          color="white"
-        />
-      </Box>
+      <Link
+        {...props}
+        css={{
+          textShadow: theme.textShadow,
+          textDecoration: 'none',
+          opacity: match ? 1 : 0.85,
+          fontWeight: match ? 'bold' : 'inherit',
+        }}
+        color="white"
+      >
+        <Box py={3} pr={3}>
+          {children}
+        </Box>
+      </Link>
     )}
   />
 );
@@ -48,7 +50,7 @@ class FixedHeaderComponent extends React.Component<RouteComponentProps<any>> {
       <FixedContainer hasBackground={this.props.location.pathname === '/gallery'}>
         <AnimatedLogo {...this.props} />
         <SectionLink to="/">Home</SectionLink>
-        <SectionLink to="/info">Info</SectionLink>
+        <SectionLink to="/info">Details</SectionLink>
         <SectionLink to="/proposal">The Proposal</SectionLink>
         <SectionLink to="/gallery">Gallery</SectionLink>
       </FixedContainer>

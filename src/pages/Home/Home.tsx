@@ -28,7 +28,7 @@ const TopContentOverlay = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: rgba(29, 50, 62, 0.4);
+  background-color: rgba(0, 0, 0, 0.4);
   color: white;
 `;
 
@@ -93,10 +93,10 @@ export class Home extends React.Component {
         <TopContentOverlay onClick={this.onClickOverlay}>
           <div style={{ textAlign: 'center' }}>
             <EasterEggHeader />
-            <Box mt={2} mb={1}>
+            <Heading as="h2" mt={2} mb={1}>
               September 7th, 2019
-            </Box>
-            <div>Saint Clements Castle, Portland, CT</div>
+            </Heading>
+            <Heading as="h2">Saint Clements Castle, Portland, CT</Heading>
           </div>
         </TopContentOverlay>
       </TopContentContainer>

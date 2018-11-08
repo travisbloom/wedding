@@ -11,5 +11,5 @@ export interface ILinkProps
 
 const BaseLink: React.SFC<ILinkProps> = Rebass.Link;
 export const Link: React.SFC<ILinkProps> = props => (
-  <BaseLink as={props.to ? RRLink : 'a'} color="gray" css={{ textDecoration: 'none' }} {...props} />
+  <BaseLink as={props.to ? RRLink : 'a'} color="graydark" css={{ textDecoration: 'none' }} {...props} />
 );
