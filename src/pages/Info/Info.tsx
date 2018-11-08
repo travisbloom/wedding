@@ -25,7 +25,7 @@ const InfoCard: React.SFC<{ left: React.ReactNode; right: React.ReactNode; label
 export class Info extends React.Component {
   render() {
     return (
-      <Box bg="offblue" px={[3, 5]} py={5}>
+      <Box bg="offblue" px={[3, 5]} py={[5, 6]}>
         <InfoCard
           label="Where"
           left={

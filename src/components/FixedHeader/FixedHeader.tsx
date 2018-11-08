@@ -36,7 +36,7 @@ const SectionLink: React.SFC<ILinkProps> = ({ children, ...props }) => (
         }}
         color="white"
       >
-        <Box py={3} pr={3}>
+        <Box py={3} pr={[2, 3]}>
           {children}
         </Box>
       </Link>
@@ -47,11 +47,12 @@ const SectionLink: React.SFC<ILinkProps> = ({ children, ...props }) => (
 class FixedHeaderComponent extends React.Component<RouteComponentProps<any>> {
   render() {
     return (
-      <FixedContainer hasBackground={this.props.location.pathname === '/gallery'}>
+      <FixedContainer hasBackground={this.props.location.pathname !== '/'}>
         <AnimatedLogo {...this.props} />
         <SectionLink to="/">Home</SectionLink>
         <SectionLink to="/info">Details</SectionLink>
-        <SectionLink to="/proposal">The Proposal</SectionLink>
+        <SectionLink to="/proposal">Proposal</SectionLink>
+        <SectionLink to="/registry">Registry</SectionLink>
         <SectionLink to="/gallery">Gallery</SectionLink>
       </FixedContainer>
     );

@@ -8,6 +8,7 @@ import eiffelTower from './eiffeltower.png';
 import proposal from './storyImages/proposal.jpg';
 
 import { Parallax, ParallaxLayer } from 'react-spring';
+import { Hide } from 'src/components/Hide/Hide';
 import { theme } from 'src/theme';
 import { Box, Card, Flex, Heading, Image } from '../../components';
 
@@ -220,24 +221,31 @@ export class Story extends React.Component {
                   <Card mx={4} css={{ maxWidth: '400px' }}>
                     {content}
                   </Card>
-                  {image && (
-                    <Card
-                      borderRadius={9999}
-                      css={{ width: '200px', height: '200px', position: 'relative', top: '-20px' }}
-                      mx={4}
-                      p={2}
-                    >
-                      <div
-                        style={{
-                          backgroundImage: `url(${image})`,
-                          borderRadius: '999px',
-                          height: '100%',
-                          width: '100%',
-                          backgroundSize: 'cover',
-                        }}
-                      />
-                    </Card>
-                  )}
+                  <Hide>
+                    {hide => {
+                      return (
+                        image &&
+                        !hide && (
+                          <Card
+                            borderRadius={9999}
+                            css={{ width: '200px', height: '200px', position: 'relative', top: '-20px' }}
+                            mx={4}
+                            p={2}
+                          >
+                            <div
+                              style={{
+                                backgroundImage: `url(${image})`,
+                                borderRadius: '999px',
+                                height: '100%',
+                                width: '100%',
+                                backgroundSize: 'cover',
+                              }}
+                            />
+                          </Card>
+                        )
+                      );
+                    }}
+                  </Hide>
                 </Flex>
               </ParallaxLayer>
             </React.Fragment>
