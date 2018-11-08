@@ -9,6 +9,7 @@ export const theme = {
   radii: [2, 4, 8],
   fontWeights: [300, 600],
   fontSizes: [12, 14, 20, 32],
+    breakpoints: [576, 768, 992, 1200],
   fonts: {
     sansSerif: 'Raleway',
     serif: "'Parisienne', cursive",
