@@ -1,18 +1,33 @@
 import * as React from 'react';
 import { Box, Card, Flex, Heading, Image } from 'src/components';
+import styled from 'styled-components';
 import amazon from './amazon.png';
+import headerImage from './headerImage.jpg';
+
+const HeaderContainer = styled.div`
+  background-image: url(${headerImage});
+  background-size: cover;
+  background-position: 29%;
+  height: calc(100vh - 58px);
+`;
 
 export class Registry extends React.Component {
   render() {
     return (
-      <Box bg="offblue" px={[3, 5]} py={6} css={{ minHeight: '100vh' }}>
-        <Card p={3} mb={4} mx="auto" css={{ textAlign: 'center', maxWidth: '400px' }}>
-          <Heading fontFamily="serif">Registry</Heading>
-          <Box p={4}>
+      <>
+        <HeaderContainer />
+        <Box py={6} px={3} css={{ margin: '0 auto', textAlign: 'center' }}>
+          <Heading fontSize={4} pb={2}>
+            Registry
+          </Heading>
+          <Heading as="h2" pb={4}>
+            We are registered at the following stores:
+          </Heading>
+          <Box css={{ maxWidth: '300px', margin: '0 auto' }}>
             <Image src={amazon} />
           </Box>
-        </Card>
-      </Box>
+        </Box>
+      </>
     );
   }
 }

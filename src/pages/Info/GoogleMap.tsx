@@ -6,8 +6,8 @@ export const GoogleMap = compose<{ latLng: google.maps.LatLngLiteral }, { latLng
   withProps({
     googleMapURL:
       'https://maps.googleapis.com/maps/api/js?key=AIzaSyAZDYLE0m3ty9JZWDx2LdFWZwdB9Zc8ay8&v=3.exp&libraries=geometry,drawing,places',
-    loadingElement: <div style={{ height: `400px` }} />,
-    containerElement: <div style={{ height: `400px`, width: '100%' }} />,
+    loadingElement: <div style={{ height: `300px` }} />,
+    containerElement: <div style={{ height: `300px`, width: '100%' }} />,
     mapElement: <div style={{ height: `100%` }} />,
   }),
   withScriptjs,

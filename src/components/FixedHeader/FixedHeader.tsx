@@ -7,21 +7,20 @@ import { Box } from '../Box/Box';
 import { ILinkProps, Link } from '../Link/Link';
 import { AnimatedLogo } from './AnimatedLogo';
 
-const FixedContainer = styled.div<{ hasBackground: boolean }>`
+const FixedContainer = styled.div<{ isOnHomepage: boolean; pathname: string }>`
   display: flex;
-  position: fixed;
+  position: ${props => (props.isOnHomepage || props.pathname === '/proposal' ? 'fixed' : 'inline')};
   z-index: 1;
   flex-direction: row;
   align-items: center;
   padding: 5px;
-  color: white;
+  color: ${props => (props.isOnHomepage ? 'white' : 'black')};
   width: 100%;
   top: 0;
-  transition: background-color 1s;
-  background-color: ${props => (props.hasBackground ? 'rgb(0,0,0,.5)' : 'transparent')};
+  transition: color 1s;
 `;
 
-const SectionLink: React.SFC<ILinkProps> = ({ children, ...props }) => (
+const SectionLink: React.SFC<ILinkProps & { isOnHomepage: boolean }> = ({ children, isOnHomepage, ...props }) => (
   <Route
     path={props.to}
     exact={true}
@@ -29,12 +28,13 @@ const SectionLink: React.SFC<ILinkProps> = ({ children, ...props }) => (
       <Link
         {...props}
         css={{
-          textShadow: theme.textShadow,
+          textShadow: isOnHomepage ? theme.textShadow : undefined,
           textDecoration: 'none',
           opacity: match ? 1 : 0.85,
+          transition: 'all 1s',
           fontWeight: match ? 'bold' : 'inherit',
         }}
-        color="white"
+        color={isOnHomepage ? 'white' : 'black'}
       >
         <Box py={3} pr={[2, 3]}>
           {children}
@@ -46,14 +46,25 @@ const SectionLink: React.SFC<ILinkProps> = ({ children, ...props }) => (
 
 class FixedHeaderComponent extends React.Component<RouteComponentProps<any>> {
   render() {
+    const sharedProps = { isOnHomepage: this.props.location.pathname === '/' };
     return (
-      <FixedContainer hasBackground={this.props.location.pathname !== '/'}>
-        <AnimatedLogo {...this.props} />
-        <SectionLink to="/">Home</SectionLink>
-        <SectionLink to="/info">Details</SectionLink>
-        <SectionLink to="/proposal">Proposal</SectionLink>
-        <SectionLink to="/registry">Registry</SectionLink>
-        <SectionLink to="/gallery">Gallery</SectionLink>
+      <FixedContainer {...sharedProps} pathname={this.props.location.pathname}>
+        <AnimatedLogo {...this.props} {...sharedProps} />
+        <SectionLink {...sharedProps} to="/">
+          Home
+        </SectionLink>
+        <SectionLink {...sharedProps} to="/info">
+          Details
+        </SectionLink>
+        <SectionLink {...sharedProps} to="/proposal">
+          Proposal
+        </SectionLink>
+        <SectionLink {...sharedProps} to="/registry">
+          Registry
+        </SectionLink>
+        <SectionLink {...sharedProps} to="/gallery">
+          Gallery
+        </SectionLink>
       </FixedContainer>
     );
   }

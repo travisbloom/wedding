@@ -131,7 +131,11 @@ export class Story extends React.Component {
   render() {
     return (
       <Parallax ref={ref => (this.parallax = ref)} pages={5}>
-        <ParallaxLayer offset={0} factor={3} style={{ backgroundColor: theme.colors.offblue }} />
+        <ParallaxLayer
+          offset={0}
+          factor={3}
+          style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(166,195,213,1) 30%)' }}
+        />
         <ParallaxLayer
           offset={CITY_START}
           factor={1}
@@ -204,21 +208,15 @@ export class Story extends React.Component {
               <ParallaxLayer
                 offset={(4.7 / stories.length) * index + 0.2 + (additionalOffset || 0) + (date ? 0.05 : 0)}
               >
-                <Heading
-                  css={{ textShadow: theme.textShadow }}
-                  textAlign="center"
-                  color="white"
-                  mb={5}
-                  fontFamily="serif"
-                >
-                  {date}
-                </Heading>
                 <Flex
                   css={index % 2 === 0 ? {} : { float: 'right' }}
                   flexDirection={index % 2 === 0 ? 'row' : 'row-reverse'}
                   alignItems="flex-start"
                 >
                   <Card mx={4} css={{ maxWidth: '400px' }}>
+                    <Heading textAlign="center" mb={2} fontFamily="serif">
+                      {date}
+                    </Heading>
                     {content}
                   </Card>
                   {image && (
