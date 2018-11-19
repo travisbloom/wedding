@@ -9,7 +9,7 @@ import { AnimatedLogo } from './AnimatedLogo';
 
 const FixedContainer = styled.div<{ isOnHomepage: boolean; pathname: string }>`
   display: flex;
-  position: ${props => (props.isOnHomepage || props.pathname === '/proposal' ? 'fixed' : 'inline')};
+  position: ${props => (props.isOnHomepage || props.pathname === '/proposal' ? 'absolute' : 'inline')};
   z-index: 1;
   flex-direction: row;
   align-items: center;

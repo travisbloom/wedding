@@ -32,7 +32,7 @@ export class AnimatedLogo extends React.Component<
   }
   render() {
     const { location, isOnHomepage } = this.props;
-    const pathSVG = paths[getPathName(location.pathname)];
+    const pathSVG = paths[getPathName(location.pathname)] || paths.home;
     const interpolator = interpolate(this.state.prevPath ? paths[this.state.prevPath] : pathSVG, pathSVG, {
       maxSegmentLength: 0.1,
     });

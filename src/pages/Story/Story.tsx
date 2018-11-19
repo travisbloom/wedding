@@ -9,8 +9,7 @@ import proposal from './storyImages/proposal.jpg';
 
 import { Parallax, ParallaxLayer } from 'react-spring';
 import { Hide } from 'src/components/Hide/Hide';
-import { theme } from 'src/theme';
-import { Box, Card, Flex, Heading, Image } from '../../components';
+import { Card, Flex, Heading } from '../../components';
 
 const CLOUDS_START = 1.5;
 const CITY_START = 0.3;
@@ -67,10 +66,10 @@ const stories = [
   {
     content: (
       <span>
-        Meanwhile, Travis plans a weeklong trip to Rome, Dubrovnik and Athens to travel with his BFF, Dylan. Meghan and
-        Travis make plans to meet in Paris on Bastille Day before continuing on their own trip to Berlin and then
-        Copenhagen. During planning preparations, Travis becomes so upset with Meghan for bringing up the topic of a
-        proposal that she is completely thrown off (and tells all of her friends that it really is not happening).
+        Meanwhile, Travis plans a weeklong trip to Rome, Dubrovnik and Athens to travel with his now-best-man, Dylan.
+        Meghan and Travis make plans to meet in Paris on Bastille Day before continuing on their own trip to Berlin and
+        then Copenhagen. During planning preparations, Travis becomes so upset with Meghan for bringing up the topic of
+        a proposal that she is completely thrown off (and tells all of her friends that it really is not happening).
       </span>
     ),
   },
@@ -120,7 +119,7 @@ const stories = [
       <span>
         Not actually a surprise: Meghan says YES, and continues to cry all of the happiest tears, especially when she
         learns Travis planned for a post-proposal picnic to enjoy her favorite view (La Tour Eiffel). Champagne is
-        popped, cheese is inhaled, bueno bars are adored, and fireworks are watched.
+        popped, cheese is inhaled, and fireworks are watched.
       </span>
     ),
   },

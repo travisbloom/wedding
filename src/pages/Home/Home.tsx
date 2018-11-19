@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Media from 'react-media';
+import { isReactSnap } from 'src/utilities/isReactSnap';
 import styled from 'styled-components';
 import { Box, Heading } from '../../components';
 import proposalImg from './proposal.jpg';
@@ -80,15 +81,17 @@ export class Home extends React.Component {
     return (
       <TopContentContainer>
         <Media query="(min-width: 768px)">
-          {(matches: boolean) => (
-            <TopContentVideo ref={this.video} autoPlay={true} muted={true} playsInline={true}>
-              <source
-                src={process.env.PUBLIC_URL + `/${matches ? 'proposal' : 'proposal-mobile'}.mp4`}
-                type="video/mp4"
-              />
-              <img src={proposalImg} />
-            </TopContentVideo>
-          )}
+          {(matches: boolean) =>
+            isReactSnap ? null : (
+              <TopContentVideo ref={this.video} autoPlay={true} muted={true} playsInline={true}>
+                <source
+                  src={process.env.PUBLIC_URL + `/${matches ? 'proposal' : 'proposal-mobile'}.mp4`}
+                  type="video/mp4"
+                />
+                <img src={proposalImg} />
+              </TopContentVideo>
+            )
+          }
         </Media>
         <TopContentOverlay onClick={this.onClickOverlay}>
           <div style={{ textAlign: 'center' }}>
