@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { hydrate, render } from 'react-dom';
-import { App } from './App/App';
+import { App } from './App';
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 

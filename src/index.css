@@ -107,6 +107,8 @@ section {
 }
 body {
   line-height: 1;
+  font-family: 'Raleway';
+  color: #1c1c1c;
 }
 ol,
 ul {
@@ -126,4 +128,8 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+* {
+  box-sizing: border-box;
 }
