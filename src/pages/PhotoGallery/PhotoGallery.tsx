@@ -9,6 +9,28 @@ interface IPhoto {
   width: number;
   height: number;
 }
+
+const engagementPhotos: IPhoto[] = [
+  { src: require('./photos/engagementphotos1.jpg'), width: 1, height: 1.5 },
+  { src: require('./photos/engagementphotos2.jpg'), width: 1.5, height: 1 },
+  { src: require('./photos/engagementphotos23.jpg'), width: 1, height: 1.5 },
+  { src: require('./photos/engagementphotos26.jpg'), width: 1, height: 1.5 },
+  { src: require('./photos/engagementphotos38.jpg'), width: 1, height: 1.5 },
+  { src: require('./photos/engagementphotos40.jpg'), width: 1.5, height: 1 },
+  { src: require('./photos/engagementphotos43.jpg'), width: 1.5, height: 1 },
+  { src: require('./photos/engagementphotos85.jpg'), width: 1.5, height: 1 },
+  { src: require('./photos/engagementphotos90.jpg'), width: 1, height: 1.5 },
+  { src: require('./photos/engagementphotos98.jpg'), width: 1.5, height: 1 },
+  { src: require('./photos/engagementphotos100.jpg'), width: 1, height: 1.5 },
+  { src: require('./photos/engagementphotos106.jpg'), width: 1.5, height: 1 },
+  { src: require('./photos/engagementphotos108.jpg'), width: 1, height: 1.5 },
+  { src: require('./photos/engagementphotos120.jpg'), width: 1, height: 1.5 },
+  { src: require('./photos/engagementphotos123.jpg'), width: 1.5, height: 1 },
+  { src: require('./photos/engagementphotos133.jpg'), width: 1.5, height: 1 },
+  { src: require('./photos/engagementphotos138.jpg'), width: 1.5, height: 1 },
+  { src: require('./photos/engagementphotos158.jpg'), width: 1, height: 1.5 },
+];
+
 const photos: IPhoto[] = [
   { src: require('./photos/megsurprised.jpg'), width: 1.5, height: 1 },
   { src: require('./photos/kisseiffeltower.jpg'), width: 1, height: 1.5 },
@@ -21,6 +43,8 @@ const photos: IPhoto[] = [
   { src: require('./photos/ring.jpg'), width: 1, height: 1.5 },
   { src: require('./photos/zion.jpg'), width: 1.333, height: 1 },
 ];
+
+const allPhotos = [...engagementPhotos, ...photos];
 
 export class PhotoGallery extends React.Component<
   {},
@@ -73,9 +97,18 @@ export class PhotoGallery extends React.Component<
             }
             return (
               <div ref={measureRef}>
-                <Gallery photos={photos} onClick={this.openLightbox} columns={columns} />
+                <Box pb={7}>
+                  <Gallery photos={engagementPhotos} onClick={this.openLightbox} columns={columns} />
+                </Box>
+                <Gallery
+                  photos={photos}
+                  onClick={(event, object) =>
+                    this.openLightbox(event, { ...object, index: engagementPhotos.length + object.index })
+                  }
+                  columns={columns}
+                />
                 <Lightbox
-                  images={photos}
+                  images={allPhotos}
                   onClose={this.closeLightbox}
                   onClickPrev={this.gotoPrevious}
                   onClickNext={this.gotoNext}

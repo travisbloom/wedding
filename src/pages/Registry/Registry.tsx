@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { Box, Card, Flex, Heading, Image } from 'src/components';
 import styled from 'styled-components';
-import amazon from './amazon.png';
 import headerImage from './headerImage.jpg';
 
 const HeaderContainer = styled.div`
@@ -21,11 +20,8 @@ export class Registry extends React.Component {
             Registry
           </Heading>
           <Heading as="h2" pb={4}>
-            We are registered at the following stores:
+            Coming soon...
           </Heading>
-          <Box css={{ maxWidth: '300px', margin: '0 auto' }}>
-            <Image src={amazon} />
-          </Box>
         </Box>
       </>
     );
