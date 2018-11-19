@@ -38,10 +38,9 @@ const photos: IPhoto[] = [
   { src: require('./photos/preengagement.jpg'), width: 1, height: 1.333 },
   { src: require('./photos/baquetteproposal.jpg'), width: 1, height: 1.5 },
   { src: require('./photos/engagementpartykiss.jpg'), width: 1.5, height: 1 },
-  { src: require('./photos/ginnygirl.jpg'), width: 1, height: 1.333 },
+  { src: require('./photos/ginnygirl.jpg'), width: 1.5, height: 1 },
   { src: require('./photos/proposal.jpg'), width: 1, height: 1.5 },
   { src: require('./photos/ring.jpg'), width: 1, height: 1.5 },
-  { src: require('./photos/zion.jpg'), width: 1.333, height: 1 },
 ];
 
 const allPhotos = [...engagementPhotos, ...photos];
