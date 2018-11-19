@@ -2,7 +2,7 @@ import * as React from 'react';
 import { ThemeProvider } from 'styled-components';
 
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { Box, FixedHeader } from './components';
+import { FixedHeader } from './components';
 import { Home } from './pages/Home/Home';
 import { Info } from './pages/Info/Info';
 import { PhotoGallery } from './pages/PhotoGallery/PhotoGallery';
