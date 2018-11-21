@@ -11,7 +11,7 @@ import { Parallax, ParallaxLayer } from 'react-spring';
 import { Hide } from 'src/components/Hide/Hide';
 import { Card, Flex, Heading } from '../../components';
 
-const CLOUDS_START = 1.5;
+const CLOUDS_START = 3.5;
 const CITY_START = 0.3;
 
 const stories = [
@@ -129,7 +129,7 @@ export class Story extends React.Component {
   parallax: any;
   render() {
     return (
-      <Parallax ref={ref => (this.parallax = ref)} pages={5}>
+      <Parallax ref={ref => (this.parallax = ref)} pages={7}>
         <ParallaxLayer
           offset={0}
           factor={3}
@@ -160,10 +160,18 @@ export class Story extends React.Component {
           style={{ backgroundImage: `url(${city1})`, backgroundSize: 'cover' }}
         />
         <ParallaxLayer
-          offset={CLOUDS_START - 0.01}
-          factor={5}
+          offset={CLOUDS_START - 2.01}
+          factor={7}
           style={{ background: 'linear-gradient(to bottom, #013147 3%,#C3DEEF 70%)' }}
         />
+        <ParallaxLayer offset={CLOUDS_START - 1.2} speed={0.8} style={{ opacity: 0.1 }}>
+          <img src={cloud} style={{ display: 'block', width: '20%', marginLeft: '55%' }} />
+          <img src={cloud} style={{ display: 'block', width: '10%', marginLeft: '15%' }} />
+        </ParallaxLayer>
+        <ParallaxLayer offset={CLOUDS_START - 0.7} speed={0.8} style={{ opacity: 0.1 }}>
+          <img src={cloud} style={{ display: 'block', width: '20%', marginLeft: '55%' }} />
+          <img src={cloud} style={{ display: 'block', width: '10%', marginLeft: '15%' }} />
+        </ParallaxLayer>
         <ParallaxLayer offset={CLOUDS_START + 0.2} speed={0.8} style={{ opacity: 0.1 }}>
           <img src={cloud} style={{ display: 'block', width: '20%', marginLeft: '55%' }} />
           <img src={cloud} style={{ display: 'block', width: '10%', marginLeft: '15%' }} />
@@ -188,7 +196,7 @@ export class Story extends React.Component {
           <img src={cloud} style={{ display: 'block', width: '20%', marginLeft: '5%' }} />
           <img src={cloud} style={{ display: 'block', width: '15%', marginLeft: '75%' }} />
         </ParallaxLayer>
-        <ParallaxLayer offset={4.4} speed={-0.5}>
+        <ParallaxLayer offset={6.4} speed={-0.5}>
           <img
             src={eiffelTower}
             style={{
@@ -205,7 +213,7 @@ export class Story extends React.Component {
           return (
             <React.Fragment key={index}>
               <ParallaxLayer
-                offset={(4.7 / stories.length) * index + 0.2 + (additionalOffset || 0) + (date ? 0.05 : 0)}
+                offset={(6.7 / stories.length) * index + 0.2 + (additionalOffset || 0) + (date ? 0.05 : 0)}
               >
                 <Flex
                   css={index % 2 === 0 ? {} : { float: 'right' }}

@@ -28,7 +28,6 @@ const SectionLink: React.SFC<ILinkProps & { isOnHomepage: boolean }> = ({ childr
       <Link
         {...props}
         css={{
-          textShadow: isOnHomepage ? theme.textShadow : undefined,
           textDecoration: 'none',
           opacity: match ? 1 : 0.85,
           transition: 'all 1s',
