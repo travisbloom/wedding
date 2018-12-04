@@ -16,9 +16,15 @@ const WeddingInfo: React.SFC<{}> = () => (
     <Heading fontSize={4} as="h1" fontFamily="serif" mb={1}>
       Saint Clements Castle & Marina
     </Heading>
+
     <Box mb={[3, 4]}>
-      Ceremony Begins at 5:30pm <br />
+      September 7th, 2019 <br />
+      Ceremony begins at 5:30pm <br />
       Reception immediately to follow
+    </Box>
+    <Box mb={[3, 4]}>
+      Cocktail attire recommended <br />
+      Ceremony will be held in the garden, weather permitting
     </Box>
     <Box className="adr" itemProp="address" itemType="http://schema.org/PostalAddress">
       <Box mb={1} itemProp="streetAddress">

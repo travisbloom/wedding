@@ -2,7 +2,7 @@ import * as React from 'react';
 import { hydrate, render } from 'react-dom';
 import { App } from './App';
 import './index.css';
-import registerServiceWorker from './registerServiceWorker';
+import { unregister } from './registerServiceWorker';
 
 const rootElement = document.getElementById('root');
 if (rootElement!.hasChildNodes()) {
@@ -10,4 +10,4 @@ if (rootElement!.hasChildNodes()) {
 } else {
   render(<App />, rootElement);
 }
-registerServiceWorker();
+unregister();
