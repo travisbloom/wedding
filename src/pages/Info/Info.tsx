@@ -69,7 +69,7 @@ export class Info extends React.Component {
             <Box itemProp="telephone">(860) 635-1001</Box>
             <Link
               target="_blank"
-              href="http://www.marriott.com/meeting-event-hotels/group-corporate-travel/groupCorp.mi?resLinkData=Ledan/Bloom%20Wedding%20%5EBDLHC%60LBWLBWA%60139.00%60USD%60false%604%609/7/19%609/8/19%6008/07/2019&app=resvlink&stop_mobi=yes"
+              href="https://www.marriott.com/events/start.mi?id=1548686727865&key=GRP"
             >
               <Box pt={3} pb={1}>
                 Book A Room At Our Group Rate
