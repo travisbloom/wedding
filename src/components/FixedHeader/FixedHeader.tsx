@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Media from 'react-media';
 import { RouteComponentProps, withRouter } from 'react-router';
 import { Route } from 'react-router-dom';
 import { theme } from 'src/theme';
@@ -22,7 +23,7 @@ const FixedContainer = styled.div<{ isOnHomepage: boolean; pathname: string }>`
 
 const SectionLink: React.SFC<ILinkProps & { isOnHomepage: boolean }> = ({ children, isOnHomepage, ...props }) => (
   <Route
-    path={props.to}
+    path={props.to || props.href}
     exact={true}
     children={({ match }) => (
       <Link
@@ -48,7 +49,11 @@ class FixedHeaderComponent extends React.Component<RouteComponentProps<any>> {
     const sharedProps = { isOnHomepage: this.props.location.pathname === '/' };
     return (
       <FixedContainer {...sharedProps} pathname={this.props.location.pathname}>
-        <AnimatedLogo {...this.props} {...sharedProps} />
+        <Media query="(max-width: 375px)">
+          {(matches: boolean) => {
+            return matches ? null : <AnimatedLogo {...this.props} {...sharedProps} />;
+          }}
+        </Media>
         <SectionLink {...sharedProps} to="/">
           Home
         </SectionLink>
@@ -64,6 +69,9 @@ class FixedHeaderComponent extends React.Component<RouteComponentProps<any>> {
         <SectionLink {...sharedProps} to="/gallery">
           Gallery
         </SectionLink>
+        {/* <SectionLink {...sharedProps} href="/rsvp" target="_blank">
+          RSVP
+        </SectionLink> */}
       </FixedContainer>
     );
   }
