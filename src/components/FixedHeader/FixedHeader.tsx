@@ -1,6 +1,6 @@
 import * as React from "react"
 import Media from "react-media"
-import { AnimatedLogo } from "./animatedLogo"
+import { AnimatedLogo } from "./pageLogo"
 import { styled } from "../styled"
 import { ILinkProps, InternalLink, ExternalLink } from "../link"
 import { Box } from "../box"
