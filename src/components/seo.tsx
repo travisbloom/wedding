@@ -65,7 +65,7 @@ SEO.defaultProps = {
   description:
     "Travis Bloom and Meghan Ledan's wedding website. Includes all the details you need to know about our exciting day :)",
   image: {
-    url: "https://www.pawlicy.com/og-image.jpg",
+    url: "https://s3.amazonaws.com/travisbloom/images/eiffel-tower.png",
     height: 707,
     width: 1351,
   },
