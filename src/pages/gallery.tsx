@@ -3,6 +3,7 @@ import Lightbox from "react-images"
 import Measure from "react-measure"
 import ReactGallery, { PhotoClickHandler } from "react-photo-gallery"
 import { Box } from "../components/box"
+import { SEO } from "../components/seo"
 
 interface IPhoto {
   src: string
@@ -187,6 +188,7 @@ export default class Gallery extends React.Component<
     const width = this.state.width
     return (
       <Box>
+        <SEO title="Gallery" />
         <Measure
           bounds={true}
           onResize={contentRect =>

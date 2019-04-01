@@ -5,6 +5,7 @@ import { styled } from "../components/styled"
 import { Heading } from "../components/heading"
 import { IGatsbyImageContent } from "../types"
 import GatsbyImage from "gatsby-image"
+import { SEO } from "../components/seo"
 const TopContentContainer = styled.div`
   position: relative;
   z-index: 0;
@@ -86,6 +87,7 @@ export default class Home extends React.Component<{
   render() {
     return (
       <TopContentContainer>
+        <SEO title="Home" />
         <Media query="(min-width: 768px)">
           {(matches: boolean) => (
             <TopContentVideo

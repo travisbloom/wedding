@@ -10,6 +10,7 @@ import { Flex } from "../components/flex"
 import { graphql } from "gatsby"
 import { IGatsbyImageContent } from "../types"
 import { FluidObject } from "gatsby-image"
+import { SEO } from "../components/seo"
 
 const HeaderContainer = styled(BackgroundImage)<{
   fluid: FluidObject
@@ -65,9 +66,9 @@ export default class Info extends React.Component<{
 }> {
   render() {
     const { data } = this.props
-    console.log(data)
     return (
       <Box fontSize={2}>
+        <SEO title="Details" />
         <HeaderContainer fluid={data.headerImage.childImageSharp.fluid!} />
         <WeddingInfo />
         <Flex

@@ -13,6 +13,7 @@ import { Box } from "../../components/box"
 import { Hide } from "../../components/hide"
 import { Heading } from "../../components/heading"
 import { Card } from "../../components/card"
+import { SEO } from "../../components/seo"
 
 const CLOUDS_START = 3.5
 const CITY_START = 0.3
@@ -146,217 +147,232 @@ export class Story extends React.Component {
   parallax: any
   render() {
     return (
-      <Parallax ref={ref => (this.parallax = ref)} pages={7}>
-        <ParallaxLayer
-          offset={0}
-          factor={3}
-          style={{
-            background:
-              "linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(166,195,213,1) 30%)",
-          }}
-        />
-        <ParallaxLayer
-          offset={CITY_START}
-          factor={1}
-          speed={-1.2}
-          style={{ backgroundImage: `url(${city4})`, backgroundSize: "cover" }}
-        />
-        <ParallaxLayer
-          offset={CITY_START + 0.3}
-          factor={1}
-          speed={-0.8}
-          style={{ backgroundImage: `url(${city3})`, backgroundSize: "cover" }}
-        />
-        <ParallaxLayer
-          offset={CITY_START + 0.6}
-          factor={0.5}
-          speed={-0.4}
-          style={{ backgroundImage: `url(${city2})`, backgroundSize: "cover" }}
-        />
-        <ParallaxLayer
-          offset={CITY_START + 0.9}
-          factor={0.5}
-          speed={0.2}
-          style={{ backgroundImage: `url(${city1})`, backgroundSize: "cover" }}
-        />
-        <ParallaxLayer
-          offset={CLOUDS_START - 2.01}
-          factor={7}
-          style={{
-            background: "linear-gradient(to bottom, #013147 3%,#C3DEEF 70%)",
-          }}
-        />
-        <ParallaxLayer
-          offset={CLOUDS_START - 1.2}
-          speed={0.8}
-          style={{ opacity: 0.1 }}
-        >
-          <img
-            src={cloud}
-            style={{ display: "block", width: "20%", marginLeft: "55%" }}
-          />
-          <img
-            src={cloud}
-            style={{ display: "block", width: "10%", marginLeft: "15%" }}
-          />
-        </ParallaxLayer>
-        <ParallaxLayer
-          offset={CLOUDS_START - 0.7}
-          speed={0.8}
-          style={{ opacity: 0.1 }}
-        >
-          <img
-            src={cloud}
-            style={{ display: "block", width: "20%", marginLeft: "55%" }}
-          />
-          <img
-            src={cloud}
-            style={{ display: "block", width: "10%", marginLeft: "15%" }}
-          />
-        </ParallaxLayer>
-        <ParallaxLayer
-          offset={CLOUDS_START + 0.2}
-          speed={0.8}
-          style={{ opacity: 0.1 }}
-        >
-          <img
-            src={cloud}
-            style={{ display: "block", width: "20%", marginLeft: "55%" }}
-          />
-          <img
-            src={cloud}
-            style={{ display: "block", width: "10%", marginLeft: "15%" }}
-          />
-        </ParallaxLayer>
-
-        <ParallaxLayer
-          offset={CLOUDS_START + 0.95}
-          speed={0.5}
-          style={{ opacity: 0.1 }}
-        >
-          <img
-            src={cloud}
-            style={{ display: "block", width: "20%", marginLeft: "70%" }}
-          />
-          <img
-            src={cloud}
-            style={{ display: "block", width: "20%", marginLeft: "40%" }}
-          />
-        </ParallaxLayer>
-
-        <ParallaxLayer
-          offset={CLOUDS_START + 0.2}
-          speed={0.2}
-          style={{ opacity: 0.2 }}
-        >
-          <img
-            src={cloud}
-            style={{ display: "block", width: "10%", marginLeft: "10%" }}
-          />
-          <img
-            src={cloud}
-            style={{ display: "block", width: "20%", marginLeft: "75%" }}
-          />
-        </ParallaxLayer>
-
-        <ParallaxLayer
-          offset={CLOUDS_START + 0.8}
-          speed={-0.1}
-          style={{ opacity: 0.4 }}
-        >
-          <img
-            src={cloud}
-            style={{ display: "block", width: "20%", marginLeft: "60%" }}
-          />
-          <img
-            src={cloud}
-            style={{ display: "block", width: "25%", marginLeft: "30%" }}
-          />
-          <img
-            src={cloud}
-            style={{ display: "block", width: "10%", marginLeft: "80%" }}
-          />
-        </ParallaxLayer>
-        <ParallaxLayer
-          offset={CLOUDS_START + 1.8}
-          speed={0.4}
-          style={{ opacity: 0.6 }}
-        >
-          <img
-            src={cloud}
-            style={{ display: "block", width: "20%", marginLeft: "5%" }}
-          />
-          <img
-            src={cloud}
-            style={{ display: "block", width: "15%", marginLeft: "75%" }}
-          />
-        </ParallaxLayer>
-        <ParallaxLayer offset={6.7} speed={-0.5}>
-          <img
-            src={eiffelTower}
+      <>
+        <SEO title="Proposal" />
+        <Parallax ref={ref => (this.parallax = ref)} pages={7}>
+          <ParallaxLayer
+            offset={0}
+            factor={3}
             style={{
-              display: "block",
-              height: "490px",
-              float: "right",
-              position: "relative",
-              right: "-25px",
+              background:
+                "linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(166,195,213,1) 30%)",
             }}
           />
-        </ParallaxLayer>
+          <ParallaxLayer
+            offset={CITY_START}
+            factor={1}
+            speed={-1.2}
+            style={{
+              backgroundImage: `url(${city4})`,
+              backgroundSize: "cover",
+            }}
+          />
+          <ParallaxLayer
+            offset={CITY_START + 0.3}
+            factor={1}
+            speed={-0.8}
+            style={{
+              backgroundImage: `url(${city3})`,
+              backgroundSize: "cover",
+            }}
+          />
+          <ParallaxLayer
+            offset={CITY_START + 0.6}
+            factor={0.5}
+            speed={-0.4}
+            style={{
+              backgroundImage: `url(${city2})`,
+              backgroundSize: "cover",
+            }}
+          />
+          <ParallaxLayer
+            offset={CITY_START + 0.9}
+            factor={0.5}
+            speed={0.2}
+            style={{
+              backgroundImage: `url(${city1})`,
+              backgroundSize: "cover",
+            }}
+          />
+          <ParallaxLayer
+            offset={CLOUDS_START - 2.01}
+            factor={7}
+            style={{
+              background: "linear-gradient(to bottom, #013147 3%,#C3DEEF 70%)",
+            }}
+          />
+          <ParallaxLayer
+            offset={CLOUDS_START - 1.2}
+            speed={0.8}
+            style={{ opacity: 0.1 }}
+          >
+            <img
+              src={cloud}
+              style={{ display: "block", width: "20%", marginLeft: "55%" }}
+            />
+            <img
+              src={cloud}
+              style={{ display: "block", width: "10%", marginLeft: "15%" }}
+            />
+          </ParallaxLayer>
+          <ParallaxLayer
+            offset={CLOUDS_START - 0.7}
+            speed={0.8}
+            style={{ opacity: 0.1 }}
+          >
+            <img
+              src={cloud}
+              style={{ display: "block", width: "20%", marginLeft: "55%" }}
+            />
+            <img
+              src={cloud}
+              style={{ display: "block", width: "10%", marginLeft: "15%" }}
+            />
+          </ParallaxLayer>
+          <ParallaxLayer
+            offset={CLOUDS_START + 0.2}
+            speed={0.8}
+            style={{ opacity: 0.1 }}
+          >
+            <img
+              src={cloud}
+              style={{ display: "block", width: "20%", marginLeft: "55%" }}
+            />
+            <img
+              src={cloud}
+              style={{ display: "block", width: "10%", marginLeft: "15%" }}
+            />
+          </ParallaxLayer>
 
-        {stories.map(({ content, additionalOffset, image, date }, index) => {
-          return (
-            <React.Fragment key={index}>
-              <ParallaxLayer
-                offset={
-                  (6.7 / stories.length) * index +
-                  0.2 +
-                  (additionalOffset || 0) +
-                  (date ? 0.05 : 0)
-                }
-              >
-                <Flex
-                  css={index % 2 === 0 ? {} : { float: "right" }}
-                  flexDirection={index % 2 === 0 ? "row" : "row-reverse"}
-                  alignItems="flex-start"
+          <ParallaxLayer
+            offset={CLOUDS_START + 0.95}
+            speed={0.5}
+            style={{ opacity: 0.1 }}
+          >
+            <img
+              src={cloud}
+              style={{ display: "block", width: "20%", marginLeft: "70%" }}
+            />
+            <img
+              src={cloud}
+              style={{ display: "block", width: "20%", marginLeft: "40%" }}
+            />
+          </ParallaxLayer>
+
+          <ParallaxLayer
+            offset={CLOUDS_START + 0.2}
+            speed={0.2}
+            style={{ opacity: 0.2 }}
+          >
+            <img
+              src={cloud}
+              style={{ display: "block", width: "10%", marginLeft: "10%" }}
+            />
+            <img
+              src={cloud}
+              style={{ display: "block", width: "20%", marginLeft: "75%" }}
+            />
+          </ParallaxLayer>
+
+          <ParallaxLayer
+            offset={CLOUDS_START + 0.8}
+            speed={-0.1}
+            style={{ opacity: 0.4 }}
+          >
+            <img
+              src={cloud}
+              style={{ display: "block", width: "20%", marginLeft: "60%" }}
+            />
+            <img
+              src={cloud}
+              style={{ display: "block", width: "25%", marginLeft: "30%" }}
+            />
+            <img
+              src={cloud}
+              style={{ display: "block", width: "10%", marginLeft: "80%" }}
+            />
+          </ParallaxLayer>
+          <ParallaxLayer
+            offset={CLOUDS_START + 1.8}
+            speed={0.4}
+            style={{ opacity: 0.6 }}
+          >
+            <img
+              src={cloud}
+              style={{ display: "block", width: "20%", marginLeft: "5%" }}
+            />
+            <img
+              src={cloud}
+              style={{ display: "block", width: "15%", marginLeft: "75%" }}
+            />
+          </ParallaxLayer>
+          <ParallaxLayer offset={6.7} speed={-0.5}>
+            <img
+              src={eiffelTower}
+              style={{
+                display: "block",
+                height: "490px",
+                float: "right",
+                position: "relative",
+                right: "-25px",
+              }}
+            />
+          </ParallaxLayer>
+
+          {stories.map(({ content, additionalOffset, image, date }, index) => {
+            return (
+              <React.Fragment key={index}>
+                <ParallaxLayer
+                  offset={
+                    (6.7 / stories.length) * index +
+                    0.2 +
+                    (additionalOffset || 0) +
+                    (date ? 0.05 : 0)
+                  }
                 >
-                  <Card mx={4} css={{ maxWidth: "400px" }}>
-                    <Heading textAlign="center" mb={2} fontFamily="serif">
-                      {date}
-                    </Heading>
-                    {content}
-                  </Card>
-                  {image && (
-                    <Hide small={true} xsmall={true}>
-                      <Card
-                        borderRadius={9999}
-                        css={{
-                          width: "200px",
-                          height: "200px",
-                          position: "relative",
-                          top: "-20px",
-                        }}
-                        mx={4}
-                        p={2}
-                      >
-                        <div
-                          style={{
-                            backgroundImage: `url(${image})`,
-                            borderRadius: "999px",
-                            height: "100%",
-                            width: "100%",
-                            backgroundSize: "cover",
+                  <Flex
+                    css={index % 2 === 0 ? {} : { float: "right" }}
+                    flexDirection={index % 2 === 0 ? "row" : "row-reverse"}
+                    alignItems="flex-start"
+                  >
+                    <Card mx={4} css={{ maxWidth: "400px" }}>
+                      <Heading textAlign="center" mb={2} fontFamily="serif">
+                        {date}
+                      </Heading>
+                      {content}
+                    </Card>
+                    {image && (
+                      <Hide small={true} xsmall={true}>
+                        <Card
+                          borderRadius={9999}
+                          css={{
+                            width: "200px",
+                            height: "200px",
+                            position: "relative",
+                            top: "-20px",
                           }}
-                        />
-                      </Card>
-                    </Hide>
-                  )}
-                </Flex>
-              </ParallaxLayer>
-            </React.Fragment>
-          )
-        })}
-      </Parallax>
+                          mx={4}
+                          p={2}
+                        >
+                          <div
+                            style={{
+                              backgroundImage: `url(${image})`,
+                              borderRadius: "999px",
+                              height: "100%",
+                              width: "100%",
+                              backgroundSize: "cover",
+                            }}
+                          />
+                        </Card>
+                      </Hide>
+                    )}
+                  </Flex>
+                </ParallaxLayer>
+              </React.Fragment>
+            )
+          })}
+        </Parallax>
+      </>
     )
   }
 }

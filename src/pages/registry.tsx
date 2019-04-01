@@ -8,6 +8,7 @@ import { styled } from "../components/styled"
 import { graphql } from "gatsby"
 import { IGatsbyImageContent } from "../types"
 import GatsbyImage, { FluidObject } from "gatsby-image"
+import { SEO } from "../components/seo"
 
 const HeaderContainer = styled(BackgroundImage)<{
   fluid: FluidObject
@@ -26,9 +27,9 @@ const Registry: React.SFC<{
     amazonImage: IGatsbyImageContent
   }
 }> = ({ data }) => {
-  console.log(data)
   return (
     <>
+      <SEO title="Registry" />
       <HeaderContainer fluid={data.headerImage.childImageSharp.fluid!} />
       <Box py={6} px={3} css={{ margin: "0 auto", textAlign: "center" }}>
         <Heading fontSize={4} pb={4} css={{ textDecoration: "underline" }}>

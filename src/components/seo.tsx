@@ -34,7 +34,7 @@ export const SEO: React.SFC<ISeoProps> = ({
         return (
           <Helmet
             title={title}
-            titleTemplate={"%s | Travis Bloom"}
+            titleTemplate={"%s | #BrideAndBloom - Travis and Meghan's Wedding"}
             htmlAttributes={{ lang: "en" }}
           >
             <meta name="description" content={description} />
@@ -63,7 +63,7 @@ export const SEO: React.SFC<ISeoProps> = ({
 
 SEO.defaultProps = {
   description:
-    "Pawlicy Advisor is bringing transparency to pet insurance. We help you compare breed-specific insurance plans for free. Make sure you get the right plan at the right price.",
+    "Travis Bloom and Meghan Ledan's wedding website. Includes all the details you need to know about our exciting day :)",
   image: {
     url: "https://www.pawlicy.com/og-image.jpg",
     height: 707,
