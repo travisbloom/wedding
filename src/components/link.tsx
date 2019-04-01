@@ -60,5 +60,5 @@ export const ExternalLink = styled.a`
 `
 
 ExternalLink.defaultProps = {
-  color: "primary",
+  color: "graydark",
 }

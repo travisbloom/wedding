@@ -11,36 +11,144 @@ interface IPhoto {
 }
 
 const engagementPhotos: IPhoto[] = [
-  // { src: require('./photos/engagementphotos1.jpg'), width: 1, height: 1.5 },
-  // { src: require('./photos/engagementphotos2.jpg'), width: 1.5, height: 1 },
-  // { src: require('./photos/engagementphotos23.jpg'), width: 1, height: 1.5 },
-  // { src: require('./photos/engagementphotos26.jpg'), width: 1, height: 1.5 },
-  // { src: require('./photos/engagementphotos38.jpg'), width: 1, height: 1.5 },
-  // { src: require('./photos/engagementphotos40.jpg'), width: 1.5, height: 1 },
-  // { src: require('./photos/engagementphotos43.jpg'), width: 1.5, height: 1 },
-  // { src: require('./photos/engagementphotos85.jpg'), width: 1.5, height: 1 },
-  // { src: require('./photos/engagementphotos90.jpg'), width: 1, height: 1.5 },
-  // { src: require('./photos/engagementphotos98.jpg'), width: 1.5, height: 1 },
-  // { src: require('./photos/engagementphotos100.jpg'), width: 1, height: 1.5 },
-  // { src: require('./photos/engagementphotos106.jpg'), width: 1.5, height: 1 },
-  // { src: require('./photos/engagementphotos108.jpg'), width: 1, height: 1.5 },
-  // { src: require('./photos/engagementphotos120.jpg'), width: 1, height: 1.5 },
-  // { src: require('./photos/engagementphotos123.jpg'), width: 1.5, height: 1 },
-  // { src: require('./photos/engagementphotos133.jpg'), width: 1.5, height: 1 },
-  // { src: require('./photos/engagementphotos138.jpg'), width: 1.5, height: 1 },
-  // { src: require('./photos/engagementphotos158.jpg'), width: 1, height: 1.5 },
+  {
+    src: require("../../content/assets/photo-gallery/engagementphotos1.jpg"),
+    width: 1,
+    height: 1.5,
+  },
+  {
+    src: require("../../content/assets/photo-gallery/engagementphotos2.jpg"),
+    width: 1.5,
+    height: 1,
+  },
+  {
+    src: require("../../content/assets/photo-gallery/engagementphotos23.jpg"),
+    width: 1,
+    height: 1.5,
+  },
+  {
+    src: require("../../content/assets/photo-gallery/engagementphotos26.jpg"),
+    width: 1,
+    height: 1.5,
+  },
+  {
+    src: require("../../content/assets/photo-gallery/engagementphotos38.jpg"),
+    width: 1,
+    height: 1.5,
+  },
+  {
+    src: require("../../content/assets/photo-gallery/engagementphotos40.jpg"),
+    width: 1.5,
+    height: 1,
+  },
+  {
+    src: require("../../content/assets/photo-gallery/engagementphotos43.jpg"),
+    width: 1.5,
+    height: 1,
+  },
+  {
+    src: require("../../content/assets/photo-gallery/engagementphotos85.jpg"),
+    width: 1.5,
+    height: 1,
+  },
+  {
+    src: require("../../content/assets/photo-gallery/engagementphotos90.jpg"),
+    width: 1,
+    height: 1.5,
+  },
+  {
+    src: require("../../content/assets/photo-gallery/engagementphotos98.jpg"),
+    width: 1.5,
+    height: 1,
+  },
+  {
+    src: require("../../content/assets/photo-gallery/engagementphotos100.jpg"),
+    width: 1,
+    height: 1.5,
+  },
+  {
+    src: require("../../content/assets/photo-gallery/engagementphotos106.jpg"),
+    width: 1.5,
+    height: 1,
+  },
+  {
+    src: require("../../content/assets/photo-gallery/engagementphotos108.jpg"),
+    width: 1,
+    height: 1.5,
+  },
+  {
+    src: require("../../content/assets/photo-gallery/engagementphotos120.jpg"),
+    width: 1,
+    height: 1.5,
+  },
+  {
+    src: require("../../content/assets/photo-gallery/engagementphotos123.jpg"),
+    width: 1.5,
+    height: 1,
+  },
+  {
+    src: require("../../content/assets/photo-gallery/engagementphotos133.jpg"),
+    width: 1.5,
+    height: 1,
+  },
+  {
+    src: require("../../content/assets/photo-gallery/engagementphotos138.jpg"),
+    width: 1.5,
+    height: 1,
+  },
+  {
+    src: require("../../content/assets/photo-gallery/engagementphotos158.jpg"),
+    width: 1,
+    height: 1.5,
+  },
 ]
 
 const photos: IPhoto[] = [
-  // { src: require('./photos/megsurprised.jpg'), width: 1.5, height: 1 },
-  // { src: require('./photos/kisseiffeltower.jpg'), width: 1, height: 1.5 },
-  // { src: require('./photos/megtraveiffeltower.jpg'), width: 1, height: 1.5 },
-  // { src: require('./photos/preengagement.jpg'), width: 1, height: 1.333 },
-  // { src: require('./photos/baquetteproposal.jpg'), width: 1, height: 1.5 },
-  // { src: require('./photos/engagementpartykiss.jpg'), width: 1.5, height: 1 },
-  // { src: require('./photos/ginnygirl.jpg'), width: 1.5, height: 1 },
-  // { src: require('./photos/proposal.jpg'), width: 1, height: 1.5 },
-  // { src: require('./photos/ring.jpg'), width: 1, height: 1.5 },
+  {
+    src: require("../../content/assets/photo-gallery/megsurprised.jpg"),
+    width: 1.5,
+    height: 1,
+  },
+  {
+    src: require("../../content/assets/photo-gallery/kisseiffeltower.jpg"),
+    width: 1,
+    height: 1.5,
+  },
+  {
+    src: require("../../content/assets/photo-gallery/megtraveiffeltower.jpg"),
+    width: 1,
+    height: 1.5,
+  },
+  {
+    src: require("../../content/assets/photo-gallery/preengagement.jpg"),
+    width: 1,
+    height: 1.333,
+  },
+  {
+    src: require("../../content/assets/photo-gallery/baquetteproposal.jpg"),
+    width: 1,
+    height: 1.5,
+  },
+  {
+    src: require("../../content/assets/photo-gallery/engagementpartykiss.jpg"),
+    width: 1.5,
+    height: 1,
+  },
+  {
+    src: require("../../content/assets/photo-gallery/ginnygirl.jpg"),
+    width: 1.5,
+    height: 1,
+  },
+  {
+    src: require("../../content/assets/photo-gallery/proposal.jpg"),
+    width: 1,
+    height: 1.5,
+  },
+  {
+    src: require("../../content/assets/photo-gallery/ring.jpg"),
+    width: 1,
+    height: 1.5,
+  },
 ]
 
 const allPhotos = [...engagementPhotos, ...photos]

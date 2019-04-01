@@ -147,10 +147,9 @@ export const wrapPageElement = ({
     <Global
       styles={css`
         body {
-          color: ${theme.colors.darkGrey};
-          font-weight: 500;
-          font-family: "Lato", sans-serif;
-          line-height: 1.5;
+          line-height: 1;
+          font-family: "Raleway";
+          color: #1c1c1c;
         }
 
         * {

@@ -108,7 +108,7 @@ export const query = graphql`
         }
       }
     }
-    amazonImage: file(relativePath: { eq: "registry-logos/westElm.png" }) {
+    amazonImage: file(relativePath: { eq: "registry-logos/amazon.png" }) {
       childImageSharp {
         fixed(width: 300) {
           ...GatsbyImageSharpFixed_tracedSVG

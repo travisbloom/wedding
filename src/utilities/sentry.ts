@@ -42,7 +42,7 @@ SentryLib.init({
   },
 })
 
-if (!isServerRendering) {
+if (!isServerRendering()) {
   // @ts-ignore
   window.testError = () => SentryLib.captureMessage("test error")
 }
