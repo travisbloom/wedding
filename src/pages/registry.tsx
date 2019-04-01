@@ -1,6 +1,5 @@
 import * as React from "react"
-// @ts-ignore
-import BackgroundImage from "gatsby-background-image"
+import headerImage from "../../content/assets/registry-page-header-image.jpg"
 import { Box } from "../components/box"
 import { Heading } from "../components/heading"
 import { Img } from "../components/img"
@@ -10,9 +9,8 @@ import { IGatsbyImageContent } from "../types"
 import GatsbyImage, { FluidObject } from "gatsby-image"
 import { SEO } from "../components/seo"
 
-const HeaderContainer = styled(BackgroundImage)<{
-  fluid: FluidObject
-}>`
+const HeaderContainer = styled.div`
+  background-image: url(${headerImage});
   background-size: cover;
   background-position: 29%;
   height: calc(100vh - 58px);
@@ -20,7 +18,6 @@ const HeaderContainer = styled(BackgroundImage)<{
 
 const Registry: React.SFC<{
   data: {
-    headerImage: IGatsbyImageContent
     crateAndBarrelImage: IGatsbyImageContent
     targetImage: IGatsbyImageContent
     westElmImage: IGatsbyImageContent
@@ -30,7 +27,7 @@ const Registry: React.SFC<{
   return (
     <>
       <SEO title="Registry" />
-      <HeaderContainer fluid={data.headerImage.childImageSharp.fluid!} />
+      <HeaderContainer />
       <Box py={6} px={3} css={{ margin: "0 auto", textAlign: "center" }}>
         <Heading fontSize={4} pb={4} css={{ textDecoration: "underline" }}>
           Registry
@@ -79,13 +76,6 @@ export default Registry
 
 export const query = graphql`
   query RegistryPage {
-    headerImage: file(relativePath: { eq: "registry-header-image.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 2300) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
     crateAndBarrelImage: file(
       relativePath: { eq: "registry-logos/crateAndBarrel.png" }
     ) {

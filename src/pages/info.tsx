@@ -1,6 +1,5 @@
 import * as React from "react"
-// @ts-ignore
-import BackgroundImage from "gatsby-background-image"
+import headerImage from "../../content/assets/info-page-header-image.jpg"
 import { GoogleMap } from "../components/GoogleMap"
 import { styled } from "../components/styled"
 import { Box } from "../components/box"
@@ -12,9 +11,8 @@ import { IGatsbyImageContent } from "../types"
 import { FluidObject } from "gatsby-image"
 import { SEO } from "../components/seo"
 
-const HeaderContainer = styled(BackgroundImage)<{
-  fluid: FluidObject
-}>`
+const HeaderContainer = styled.div`
+  background-image: url(${headerImage});
   background-size: cover;
   background-position: 50%;
   height: calc(100vh - 58px);
@@ -69,7 +67,7 @@ export default class Info extends React.Component<{
     return (
       <Box fontSize={2}>
         <SEO title="Details" />
-        <HeaderContainer fluid={data.headerImage.childImageSharp.fluid!} />
+        <HeaderContainer />
         <WeddingInfo />
         <Flex
           pt={6}
@@ -119,15 +117,3 @@ export default class Info extends React.Component<{
     )
   }
 }
-
-export const query = graphql`
-  query InfoPage {
-    headerImage: file(relativePath: { eq: "info-page-header-image.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 2300) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }
-`
