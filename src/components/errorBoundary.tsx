@@ -1,12 +1,18 @@
-import * as Sentry from '@sentry/browser'
-import * as React from 'react'
-import _ from 'lodash'
+import * as Sentry from "@sentry/browser"
+import * as React from "react"
+import _ from "lodash"
 
-export const ErrorBoundaryContent: React.SFC<{ onClick: () => void }> = ({ onClick }) => (
-  <div>error</div>
+export const ErrorBoundaryContent: React.SFC<{}> = () => (
+  <div>
+    Whoops! Travis has been notified and is checking to see what happened. Come
+    back later :)
+  </div>
 )
 
-export class ErrorBoundary extends React.Component<{}, { error: Error | null }> {
+export class ErrorBoundary extends React.Component<
+  {},
+  { error: Error | null }
+> {
   state = { error: null }
 
   componentDidCatch(error: Error, errorInfo: any) {
@@ -14,7 +20,7 @@ export class ErrorBoundary extends React.Component<{}, { error: Error | null }> 
       Object.keys(errorInfo).forEach(key => {
         scope.setExtra(key, errorInfo[key])
       })
-      scope.setTag('errorViewDisplayed', 'true')
+      scope.setTag("errorViewDisplayed", "true")
       Sentry.captureException(error)
     })
     this.setState({ error })
