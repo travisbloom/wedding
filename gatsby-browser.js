@@ -6,8 +6,10 @@ export { wrapPageElement } from "./src/gatsby/wrapPageElement"
 
 export function unregister() {
   if (typeof navigator !== undefined && "serviceWorker" in navigator) {
-    navigator.serviceWorker.ready.then(registration => {
-      registration.unregister()
+    navigator.serviceWorker.getRegistrations().then(registrations => {
+      for (let registration of registrations) {
+        registration.unregister()
+      }
     })
   }
 }
