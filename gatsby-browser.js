@@ -4,7 +4,16 @@ import "typeface-raleway"
 export { wrapRootElement } from "./src/gatsby/wrapRootElement"
 export { wrapPageElement } from "./src/gatsby/wrapPageElement"
 
+export function unregister() {
+  if (typeof navigator !== undefined && "serviceWorker" in navigator) {
+    navigator.serviceWorker.ready.then(registration => {
+      registration.unregister()
+    })
+  }
+}
+
 export const onClientEntry = () => {
+  unregister()
   // IntersectionObserver polyfill for gatsby-image (Safari, IE)
   if (typeof window.IntersectionObserver === `undefined`) {
     import(`intersection-observer`)
