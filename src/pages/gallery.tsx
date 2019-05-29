@@ -155,7 +155,9 @@ const photos: IPhoto[] = [
 const allPhotos = [...engagementPhotos, ...photos]
 
 export default class Gallery extends React.Component<
-  {},
+  {
+    data: Record<any, any>
+  },
   { width: number; currentImage: number; lightboxIsOpen: boolean }
 > {
   constructor(props: {}) {

@@ -1,6 +1,5 @@
 import * as React from "react"
 import Media from "react-media"
-import { AnimatedLogo } from "./pageLogo"
 import { styled } from "../styled"
 import { ILinkProps, InternalLink, ExternalLink } from "../link"
 import { Box } from "../box"
@@ -56,13 +55,6 @@ export class FixedHeader extends React.Component<RouteComponentProps<any>> {
     const sharedProps = { isOnHomepage: this.props.location!.pathname === "/" }
     return (
       <FixedContainer {...sharedProps} pathname={this.props.location!.pathname}>
-        <Media query="(max-width: 375px)">
-          {(matches: boolean) => {
-            return matches ? null : (
-              <AnimatedLogo {...this.props} {...sharedProps} />
-            )
-          }}
-        </Media>
         <SectionLink {...sharedProps} to="/">
           Home
         </SectionLink>
