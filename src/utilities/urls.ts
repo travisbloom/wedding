@@ -1,1 +1,1 @@
-export const fullUrl = (path: string) => `http://travisbloom.me${path}`
+export const fullUrl = (path: string) => `https://travisbloom.me${path}`

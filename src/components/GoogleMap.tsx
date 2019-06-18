@@ -44,7 +44,7 @@ const GoogleMapsContent: React.SFC<{}> = () => {
               <Box
                 className="adr"
                 itemProp="address"
-                itemType="http://schema.org/PostalAddress"
+                itemType="https://schema.org/PostalAddress"
               >
                 <Box mb={1} itemProp="streetAddress">
                   4 Sebethe Drive
@@ -72,7 +72,7 @@ const GoogleMapsContent: React.SFC<{}> = () => {
               <Box
                 className="adr"
                 itemProp="address"
-                itemType="http://schema.org/PostalAddress"
+                itemType="https://schema.org/PostalAddress"
               >
                 <Box mb={1} itemProp="streetAddress">
                   1931 Portland-Cobalt Rd
@@ -101,7 +101,7 @@ const GoogleMapsContent: React.SFC<{}> = () => {
               <Box
                 className="adr"
                 itemProp="address"
-                itemType="http://schema.org/PostalAddress"
+                itemType="https://schema.org/PostalAddress"
               >
                 <Box mb={1} itemProp="streetAddress">
                   181 Lancaster Way

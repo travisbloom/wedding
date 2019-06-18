@@ -98,7 +98,7 @@ const Accommodations: React.SFC<{}> = () => (
         <Box
           className="adr"
           itemProp="address"
-          itemType="http://schema.org/PostalAddress"
+          itemType="https://schema.org/PostalAddress"
         >
           <Box mb={1}>Courtyard by Marriott Hartford Cromwell</Box>
           <Box mb={1} itemProp="streetAddress">
@@ -150,7 +150,7 @@ const BagelBrunch: React.SFC<{}> = () => (
         <Box
           className="adr"
           itemProp="address"
-          itemType="http://schema.org/PostalAddress"
+          itemType="https://schema.org/PostalAddress"
         >
           <Box>Hosted by Larry and Diane Selnick</Box>
           <Box itemProp="streetAddress">181 Lancaster Way</Box>
