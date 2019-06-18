@@ -34,7 +34,6 @@ export const InternalLink = styled(GatsbyLink)`
   ${order}
   ${alignSelf}
   display: inline-block;
-  text-decoration: none;
   :hover {
     color: ${theme.colors.black};
   }
@@ -53,7 +52,6 @@ export const ExternalLink = styled.a`
   ${order}
   ${alignSelf}
   display: inline-block;
-  text-decoration: none;
   :hover {
     color: ${theme.colors.black};
   }

@@ -98,7 +98,7 @@ export default class Info extends React.Component<{
               target="_blank"
               href="https://www.marriott.com/events/start.mi?id=1548686727865&key=GRP"
             >
-              <Box pt={3} pb={1}>
+              <Box py={3} pb={1}>
                 Book A Room At Our Group Rate
               </Box>
             </ExternalLink>
@@ -110,7 +110,7 @@ export default class Info extends React.Component<{
             </ExternalLink>
           </Box>
           <Box width={["100%", "50%"]} p={3}>
-            <GoogleMap latLng={{ lat: 41.607199, lng: -72.706993 }} />
+            <GoogleMap />
           </Box>
         </Flex>
       </Box>

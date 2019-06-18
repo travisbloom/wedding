@@ -70,9 +70,9 @@ export class FixedHeader extends React.Component<RouteComponentProps<any>> {
         <SectionLink {...sharedProps} to="/gallery">
           Gallery
         </SectionLink>
-        {/* <SectionLink {...sharedProps} href="/rsvp" target="_blank">
+        <SectionLink {...sharedProps} href="/rsvp" target="_blank">
           RSVP
-        </SectionLink> */}
+        </SectionLink>
       </FixedContainer>
     )
   }
