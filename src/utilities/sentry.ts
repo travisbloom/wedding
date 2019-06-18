@@ -25,7 +25,9 @@ SentryLib.init({
   logLevel: 2,
   dsn: "https://56f0565480664f6fa7d0fc0a6cd9d119@sentry.io/1427913",
   environment: APP_CONFIG.environment,
-  enabled: window.location.href.indexOf("travisandmeghan") !== -1,
+  enabled:
+    !isServerRendering() &&
+    window.location.href.indexOf("travisandmeghan") !== -1,
   beforeBreadcrumb(breadcrumb) {
     return breadcrumb.category === "console" ? null : breadcrumb
   },
