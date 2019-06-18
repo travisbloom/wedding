@@ -15,14 +15,12 @@ import { Txt } from "./txt"
 type Locations = "stclements" | "hotel" | "larrys"
 
 const GoogleMapsContent: React.SFC<{}> = () => {
-  const [openLocation, toggleOpenLocation] = useState<null | Locations>(
-    "stclements"
-  )
+  const [openLocation, toggleOpenLocation] = useState<null | Locations>(null)
   return (
     <GoogleMapLib
-      defaultZoom={11}
+      defaultZoom={10}
       onClick={() => toggleOpenLocation(null)}
-      defaultCenter={{ lat: 41.607199, lng: -72.706993 }}
+      defaultCenter={{ lat: 41.576089, lng: -72.730968 }}
       options={{
         mapTypeControl: false,
         clickableIcons: false,
