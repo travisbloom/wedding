@@ -1,9 +1,10 @@
 import * as React from "react"
 import Media from "react-media"
-import { styled } from "../styled"
-import { ILinkProps, InternalLink, ExternalLink } from "../link"
-import { Box } from "../box"
+import { styled, css } from "./styled"
+import { ILinkProps, InternalLink, ExternalLink } from "./link"
+import { Box } from "./box"
 import { Link, Match, RouteComponentProps } from "@reach/router"
+import { theme } from "../theme"
 
 const FixedContainer = styled.div<{ isOnHomepage: boolean; pathname: string }>`
   display: flex;
@@ -21,24 +22,26 @@ const FixedContainer = styled.div<{ isOnHomepage: boolean; pathname: string }>`
   transition: color 1s;
 `
 
-const SectionLink: React.SFC<ILinkProps & { isOnHomepage: boolean }> = ({
-  children,
-  isOnHomepage,
-  ...props
-}) => (
+const SectionLink: React.SFC<
+  ILinkProps & { isOnHomepage: boolean; target?: string }
+> = ({ children, isOnHomepage, ...props }) => (
   <Match
     path={(props.to || props.href)!}
     children={({ match }) => {
       const LinkComponent = props.to ? InternalLink : ExternalLink
       return (
+        // @ts-ignore
         <LinkComponent
           {...props}
-          css={{
-            textDecoration: "none",
-            opacity: match ? 1 : 0.85,
-            transition: "all 1s",
-            fontWeight: match ? "bold" : "inherit",
-          }}
+          css={css`
+            text-decoration: none;
+            opacity: ${match ? 1 : 0.85};
+            transition: all 1s;
+            font-weight: ${match ? "bold" : "inherit"};
+            @media (min-width: ${theme.minSize.small}px) {
+              font-size: 18px;
+            }
+          `}
           color={isOnHomepage ? "white" : "black"}
         >
           <Box py={3} pr={[2, 3]}>
@@ -50,7 +53,7 @@ const SectionLink: React.SFC<ILinkProps & { isOnHomepage: boolean }> = ({
   />
 )
 
-export class FixedHeader extends React.Component<RouteComponentProps<any>> {
+export class MainHeader extends React.Component<RouteComponentProps<any>> {
   render() {
     const sharedProps = { isOnHomepage: this.props.location!.pathname === "/" }
     return (

@@ -6,6 +6,7 @@ import { Heading } from "../components/heading"
 import { IGatsbyImageContent } from "../types"
 import GatsbyImage from "gatsby-image"
 import { SEO } from "../components/seo"
+import { Box } from "../components/box"
 const TopContentContainer = styled.div`
   position: relative;
   z-index: 0;
@@ -109,13 +110,15 @@ export default class Home extends React.Component<{
           )}
         </Media>
         <TopContentOverlay onClick={this.onClickOverlay}>
-          <div style={{ textAlign: "center" }}>
+          <Box style={{ textAlign: "center" }} mx={2}>
             <EasterEggHeader />
             <Heading as="h2" mt={2} mb={1}>
               September 7th, 2019
             </Heading>
-            <Heading as="h2">Saint Clements Castle, Portland, CT</Heading>
-          </div>
+            <Heading as="h2">
+              Saint Clements Castle & Marina, Portland, CT
+            </Heading>
+          </Box>
         </TopContentOverlay>
       </TopContentContainer>
     )

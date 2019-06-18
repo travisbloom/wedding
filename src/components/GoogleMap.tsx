@@ -15,10 +15,12 @@ import { Txt } from "./txt"
 type Locations = "stclements" | "hotel" | "larrys"
 
 const GoogleMapsContent: React.SFC<{}> = () => {
-  const [openLocation, toggleOpenLocation] = useState<null | Locations>(null)
+  const [openLocation, toggleOpenLocation] = useState<null | Locations>(
+    "stclements"
+  )
   return (
     <GoogleMapLib
-      defaultZoom={10}
+      defaultZoom={11}
       onClick={() => toggleOpenLocation(null)}
       defaultCenter={{ lat: 41.607199, lng: -72.706993 }}
       options={{
@@ -27,7 +29,6 @@ const GoogleMapsContent: React.SFC<{}> = () => {
         panControl: false,
         scaleControl: false,
         streetViewControl: false,
-        zoomControl: false,
       }}
     >
       <Marker
@@ -38,7 +39,7 @@ const GoogleMapsContent: React.SFC<{}> = () => {
           <InfoWindow onCloseClick={() => toggleOpenLocation(null)}>
             <Box p={2}>
               <Txt fontWeight="bold" mb={2}>
-                Courtyard Hartford Cromwell
+                Courtyard by Marriott Hartford Cromwell
               </Txt>
               <Box
                 className="adr"
@@ -66,7 +67,7 @@ const GoogleMapsContent: React.SFC<{}> = () => {
           <InfoWindow onCloseClick={() => toggleOpenLocation(null)}>
             <Box p={2}>
               <Txt fontWeight="bold" mb={2}>
-                St. Clement's Castle
+                Saint Clements Castle & Marina
               </Txt>
               <Box
                 className="adr"
@@ -123,8 +124,8 @@ export const GoogleMap = compose(
   withProps({
     googleMapURL:
       "https://maps.googleapis.com/maps/api/js?key=AIzaSyAZDYLE0m3ty9JZWDx2LdFWZwdB9Zc8ay8&v=3.exp&libraries=geometry,drawing,places",
-    loadingElement: <div style={{ height: `300px` }} />,
-    containerElement: <div style={{ height: `300px`, width: "100%" }} />,
+    loadingElement: <div style={{ height: `500px` }} />,
+    containerElement: <div style={{ height: `500px`, width: "100%" }} />,
     mapElement: <div style={{ height: `100%` }} />,
   }),
   withScriptjs,
