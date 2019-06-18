@@ -2,13 +2,6 @@ import * as Sentry from "@sentry/browser"
 import * as React from "react"
 import _ from "lodash"
 
-export const ErrorBoundaryContent: React.SFC<{}> = () => (
-  <div>
-    Whoops! Travis has been notified and is checking to see what happened. Come
-    back later :)
-  </div>
-)
-
 export class ErrorBoundary extends React.Component<
   {},
   { error: Error | null }
@@ -27,10 +20,6 @@ export class ErrorBoundary extends React.Component<
   }
 
   render() {
-    if (this.state.error) {
-      return <ErrorBoundaryContent onClick={() => Sentry.showReportDialog()} />
-    } else {
-      return this.props.children
-    }
+    return this.props.children
   }
 }
