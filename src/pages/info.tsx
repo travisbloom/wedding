@@ -64,9 +64,7 @@ const StClementsEvent: React.SFC<{}> = () => (
     where={
       <>
         <Box>Saint Clements Castle & Marina</Box>
-        <Box mb={1} itemProp="streetAddress">
-          1931 Portland-Cobalt Rd
-        </Box>
+        <Box itemProp="streetAddress">1931 Portland-Cobalt Rd</Box>
         <Box mb={1}>
           <span itemProp="addressLocality">Portland</span>,{" "}
           <span itemProp="addressRegion">CT</span>{" "}
@@ -103,9 +101,7 @@ const Accommodations: React.SFC<{}> = () => (
           itemType="https://schema.org/PostalAddress"
         >
           <Box mb={1}>Courtyard by Marriott Hartford Cromwell</Box>
-          <Box mb={1} itemProp="streetAddress">
-            4 Sebethe Drive
-          </Box>
+          <Box itemProp="streetAddress">4 Sebethe Drive</Box>
           <Box mb={1}>
             <span itemProp="addressLocality">Cromwell</span>,{" "}
             <span itemProp="addressRegion">CT</span>{" "}
