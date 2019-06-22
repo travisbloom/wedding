@@ -85,6 +85,8 @@ const StClementsEvent: React.SFC<{}> = () => (
         Cocktail attire recommended.
         <br />
         Ceremony will be held in the garden, weather permitting.
+        <br />
+        After-party starting at 11:30pm at the Courtyard by Marriott hotel bar.
       </>
     }
   />
