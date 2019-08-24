@@ -7,6 +7,7 @@ import { IGatsbyImageContent } from "../types"
 import GatsbyImage from "gatsby-image"
 import { SEO } from "../components/seo"
 import { Box } from "../components/box"
+import { InternalLink, ExternalLink } from "../components/link"
 const TopContentContainer = styled.div`
   position: relative;
   z-index: 0;

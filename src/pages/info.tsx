@@ -56,16 +56,23 @@ const StClementsEvent: React.SFC<{}> = () => (
     heading={"Ceremony and Reception"}
     when={
       <>
-        Saturday, September 7th, 2019 <br />
-        Ceremony begins at 5:30pm <br />
-        Reception immediately to follow
+        <Box>
+          Saturday, September 7th, 2019 <br />
+          Ceremony begins at 5:30pm <br />
+          Reception immediately to follow in the{" "}
+          <span style={{ whiteSpace: "nowrap" }}>Prince Edward Ballroom</span>.
+        </Box>
+        <Box mt={2}>
+          Buses will depart from the Courtyard by Marriott Hartford Cromwell at
+          4:40pm and will return guest at 10pm and 11pm.
+        </Box>
       </>
     }
     where={
       <>
         <Box>Saint Clements Castle & Marina</Box>
         <Box itemProp="streetAddress">1931 Portland-Cobalt Rd</Box>
-        <Box mb={1}>
+        <Box>
           <span itemProp="addressLocality">Portland</span>,{" "}
           <span itemProp="addressRegion">CT</span>{" "}
           <span itemProp="postalCode">06480</span>
@@ -102,7 +109,7 @@ const Accommodations: React.SFC<{}> = () => (
         >
           <Box mb={1}>Courtyard by Marriott Hartford Cromwell</Box>
           <Box itemProp="streetAddress">4 Sebethe Drive</Box>
-          <Box mb={1}>
+          <Box>
             <span itemProp="addressLocality">Cromwell</span>,{" "}
             <span itemProp="addressRegion">CT</span>{" "}
             <span itemProp="postalCode">06416</span>
@@ -152,7 +159,7 @@ const BagelBrunch: React.SFC<{}> = () => (
         >
           <Box>Hosted by Larry and Diane Selnick</Box>
           <Box itemProp="streetAddress">181 Lancaster Way</Box>
-          <Box mb={1}>
+          <Box>
             <span itemProp="addressLocality">Cheshire</span>,{" "}
             <span itemProp="addressRegion">CT</span>{" "}
             <span itemProp="postalCode">06410</span>
