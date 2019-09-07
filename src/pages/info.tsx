@@ -64,7 +64,7 @@ const StClementsEvent: React.SFC<{}> = () => (
         </Box>
         <Box mt={2}>
           Buses will depart from the Courtyard by Marriott Hartford Cromwell at
-          4:40pm and will return guest at 10pm and 11pm.
+          4:40pm and will return guests at 10pm and 11pm.
         </Box>
       </>
     }
